@@ -1,6 +1,10 @@
 # TNE:GO
 
-This repository contains the code for Team TNE:GO for the TNE10006 subject of the Swinburne Akathon in Semester Jan 2023.
+Team name: TNE:GO
+
+Subject: TNE10006
+
+Contest: Swinburne Akathon Semester Jan 2023
 
 ## Team Members
 - Le Xuan Nhat
