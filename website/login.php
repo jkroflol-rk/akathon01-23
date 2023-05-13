@@ -73,11 +73,10 @@
                     <!-- <label for="button" id="nav_icon"><img src="images/nav.png" alt="navbar"></label> -->
                     <label for="button" id="nav_icon"><i class="fa-solid fa-bars"></i></label>
                     <ul>
-                        <li ><a href="homepage.html">Homepage</a></li>
-                        <li><a href="service.html">Service</a></li>
-                        <li><a href="admin.html">Admin</a></li>
-                        <li ><a href="ourteam.html">Our Team</a></li>
-                        <li class="active"><a href="login.html">Login</a></li>
+                        <li ><a href="index.php">Homepage</a></li>
+                        <li><a href="service.php">Service</a></li>
+                        <li ><a href="ourteam.php">Our Team</a></li>
+                        <li ><a href="login.php">Login</a></li>
                     </ul>
 
                 </div>
