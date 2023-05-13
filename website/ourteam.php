@@ -25,7 +25,7 @@
                     <ul>
 						<li ><a href="index.php">Homepage</a></li>
                         <li><a href="service.php">Service</a></li>
-                        <li ><a href="ourteam.php">Our Team</a></li>
+                        <li class="active"><a href="ourteam.php">Our Team</a></li>
                         <li ><a href="login.php">Login</a></li>
                     </ul>
 

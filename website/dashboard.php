@@ -20,7 +20,7 @@
                     <label for="button" id="nav_icon"><i class="fa-solid fa-bars"></i></label>
                     <ul>
                         <li ><a href="homepage.html">Homepage</a></li>
-                        <li ><a href="dashboard.html">Dashboard</a></li>
+                        <li class="active"><a href="dashboard.html">Dashboard</a></li>
                         <li ><a href="ourteam.html">Our Team</a></li>
                         <li ><a href="login.html">Login</a></li>
                     </ul>
