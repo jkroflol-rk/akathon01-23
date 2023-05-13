@@ -21,7 +21,7 @@
 
             
             <nav>
-                <h1>TNE:GO</h1>
+                <h1>TNE:GO</h1>66
                 <div class="nav_links">
                     <input type="checkbox" id="button">
                     <!-- <label for="button" id="nav_icon"><img src="images/nav.png" alt="navbar"></label> -->
