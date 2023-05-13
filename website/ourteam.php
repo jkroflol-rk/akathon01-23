@@ -23,13 +23,8 @@
                     <input type="checkbox" id="button">
                     <label for="button" id="nav_icon"><i class="fa-solid fa-bars"></i></label>
                     <ul>
-<<<<<<< HEAD
                         <li ><a href="homepage.html">Homepage</a></li>
                         <li><a href="service.html">Service</a></li>
-=======
-                        <li ><a href="index.html">Homepage</a></li>
-                        <li><a href="form.html">Service</a></li>
->>>>>>> 70f40a22b8e44198ec255fd6959afa0bd76e2583
                         <li><a href="admin.html">Admin</a></li>
                         <li class="active"><a href="ourteam.html">Our Team</a></li>
                         <li ><a href="login.html">Login</a></li>
