@@ -67,7 +67,7 @@
                                     <img src="images/akathonlogo.jpg" alt="edit_photo">
                                 </div>
                                 <div class="pra pra-content">
-                                    <span>Make An Order</span>
+                                    <span>Go to your config</span>
                                 </div>
                             </div>
                         </a>

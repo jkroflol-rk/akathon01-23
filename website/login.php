@@ -33,11 +33,10 @@
 
       <?php
         if (($password == $row->password) && ($username == $row->username && ($row->admin == "true"))){
-          header('Location: https://rt-kc.github.io/akathon01-23/website/index.html');
-
+          header('Location: admin.php');
         }else if (($password == $row->password) && ($username == $row->username)){
           echo $row->username;
-          header('Location: http://www.example.com/');
+          header('Location: dashboard.php');
         }
 
       ?>

@@ -27,10 +27,10 @@
                     <input type="checkbox" id="button">
                     <label for="button" id="nav_icon"><i class="fa-solid fa-bars"></i></label>
                     <ul>
-                        <li class="active"><a href="">Homepage</a></li>
-                        <li><a href="dashboard.html">Dashboard</a></li>
-                        <li ><a href="ourteam.html">Our Team</a></li>
-                        <li ><a href="login.html">Login</a></li>
+                        <li ><a href="index.php">Homepage</a></li>
+                        <li><a href="service.php">Service</a></li>
+                        <li ><a href="ourteam.php">Our Team</a></li>
+                        <li ><a href="login.php">Login</a></li>
                     </ul>
 
                 </div>
