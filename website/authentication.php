@@ -28,10 +28,11 @@
   foreach ($data->data as $row) {
     if (($password == $row->password) && ($username == $row->username && ($row->admin == "true"))) {
       header('Location: admin.php');
-      $_SESSION['authenticated'] = true;
+      $_SESSION['admin'] = true;
       exit();
     } else if (($password == $row->password) && ($username == $row->username)) {
       header('Location: dashboard.php');
+      $_SESSION['authenticated'] = true;
       exit();
     }else{
       header('Location: login.php');

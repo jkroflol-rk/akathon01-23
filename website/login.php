@@ -1,9 +1,7 @@
 <?php
 //if logged in, go to manager page
     session_start();
-    if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
-        // header("Location: ./dashboard.php");
-    }
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,7 +35,7 @@
                         <li ><a href="index.php">Homepage</a></li>
                         <li><a href="dashboard.php">Dashboard</a></li>
                         <li ><a href="ourteam.php">Our Team</a></li>
-                        <li class="active"><a href="login.php">Login</a></li>
+                        <li class='active'><a href='login.php'>Login</a></li>
                     </ul>
 
                 </div>

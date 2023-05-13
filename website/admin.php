@@ -1,11 +1,11 @@
 <?php
 //if logged in, go to manager page
-	session_start();
-	if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
-		// header("Location: ./dashboard.php");
-	}else{
-		header('Location: ./login.php');
-	}
+session_start();
+if (isset($_SESSION['admin']) && $_SESSION['admin']) {
+	
+} else {
+	header('Location: ./login.php');
+}
 ?>
 
 <?php
@@ -29,6 +29,7 @@ $data = json_decode($response);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -46,148 +47,158 @@ $data = json_decode($response);
 	<title>Information</title>
 
 </head>
+
 <body>
 	<div class="fixbug">
 		<header>
 			<nav>
 				<h1>TNE:GO</h1>
 				<div class="nav_links">
-						<input type="checkbox" id="button">
-						<label for="button" id="nav_icon"><i class="fa-solid fa-bars"></i></label>
-						<ul>
-							<li ><a href="index.php">Homepage</a></li>
-							<li><a href="dashboard.php">Dashboard</a></li>
-							<li ><a href="ourteam.php">Our Team</a></li>
-							<li ><a href="login.php">Login</a></li>
-						</ul>
+					<input type="checkbox" id="button">
+					<label for="button" id="nav_icon"><i class="fa-solid fa-bars"></i></label>
+					<ul>
+						<li><a href="index.php">Homepage</a></li>
+						<li><a href="dashboard.php">Dashboard</a></li>
+						<li><a href="ourteam.php">Our Team</a></li>
+						<?php
+							if (isset($_SESSION['admin']) && $_SESSION['admin']) {
+								echo "<li class='active'><a href='admin.php'>Admin</a></li>";
+							}
+							if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
+								echo "<li><a href='logout.php'>Logout</a></li>";
+							} else {
+								echo "<li><a href='login.php'>Login</a></li>";
+							}
+						?>
+					</ul>
 
 				</div>
 			</nav>
-				
-		</header>
-			
-			<main>
-				<div class="topology">
-						<h1>Manage Order</h1>
-						<div class="hello_container">
-								<div class="order-card hello">
-										<h2 class="customer-name">Customer Name</h2>
-										<p class="ordered-time">Ordered Time: [Date and Time]</p>
-										<p class="num-vlans">Number of VLANs: [Number]</p>
-										<ul class="host-list">
-											<li>[Hostname 1]</li>
-											<li>[Hostname 2]</li>
-											<li>[Hostname 3]</li>
-											<!-- ... -->
-											<li>[Hostname N]</li>
-										</ul>
-										<!-- <button class="test_btn" type="button">Click to Delete</button> <br> -->
-										<button class="test_btn" type="button">Click to Delete</button>
-								</div>
-								<div class="order-card hello">
-										<h2 class="customer-name">Customer Name</h2>
-										<p class="ordered-time">Ordered Time: [Date and Time]</p>
-										<p class="num-vlans">Number of VLANs: [Number]</p>
-										<ul class="host-list">
-											<li>[Hostname 1]</li>
-											<li>[Hostname 2]</li>
-											<li>[Hostname 3]</li>
-											<!-- ... -->
-											<li>[Hostname N]</li>
-										</ul>
-										<!-- <button class="test_btn" type="button">Click to Delete</button> <br> -->
-										<button class="test_btn" type="button">Click to Delete</button>
-								</div>
-								<div class="order-card hello">
-										<h2 class="customer-name">Customer Name</h2>
-										<p class="ordered-time">Ordered Time: [Date and Time]</p>
-										<p class="num-vlans">Number of VLANs: [Number]</p>
-										<ul class="host-list">
-											<li>[Hostname 1]</li>
-											<li>[Hostname 2]</li>
-											<li>[Hostname 3]</li>
-											<!-- ... -->
-											<li>[Hostname N]</li>
-										</ul>
-										<!-- <button class="test_btn" type="button">Click to Delete</button> <br> -->
-										<button class="test_btn" type="button">Click to Delete</button>
-								</div>
-								<div class="order-card hello">
-										<h2 class="customer-name">Customer Name</h2>
-										<p class="ordered-time">Ordered Time: [Date and Time]</p>
-										<p class="num-vlans">Number of VLANs: [Number]</p>
-										<ul class="host-list">
-											<li>[Hostname 1]</li>
-											<li>[Hostname 2]</li>
-											<li>[Hostname 3]</li>
-											<!-- ... -->
-											<li>[Hostname N]</li>
-										</ul>
-										<!-- <button class="test_btn" type="button">Click to Delete</button> <br> -->
-										<button class="test_btn" type="button">Click to Delete</button>
-								</div>
-								<div class="order-card hello">
-										<h2 class="customer-name">Customer Name</h2>
-										<p class="ordered-time">Ordered Time: [Date and Time]</p>
-										<p class="num-vlans">Number of VLANs: [Number]</p>
-										<ul class="host-list">
-											<li>[Hostname 1]</li>
-											<li>[Hostname 2]</li>
-											<li>[Hostname 3]</li>
-											<!-- ... -->
-											<li>[Hostname N]</li>
-										</ul>
-										<!-- <button class="test_btn" type="button">Click to Delete</button> <br> -->
-										<button class="test_btn" type="button">Click to Delete</button>
-								</div>
-								
-							</div>
-						</div>
-				<div class="collapse">
-						<button type="button" class="collapsible">Open Collapsible</button>
-						<div class="content">
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias at quas sunt eveniet voluptate, adipisci fugit dolorum libero sit eaque nobis nam, ex repellendus nostrum tenetur asperiores obcaecati perspiciatis deserunt.</p>
-						</div>
-						<button type="button" class="collapsible">Open Collapsible</button>
-						<div class="content">
-								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias at quas sunt eveniet voluptate, adipisci fugit dolorum libero sit eaque nobis nam, ex repellendus nostrum tenetur asperiores obcaecati perspiciatis deserunt.</p>
-						</div>
 
-						<table id="userstable">
-							<th>
-								<tr>
-									<th>Name</th>
-									<th>Email</th>
-									<th>Departments</th>
-									<th>Users</th>
-								</tr>
-							</th>
-							<tbody>
-								<?php foreach ($data->data as $row): ?>
-									<tr>
-										<td><?= $row->id ?></td>
-										<td><?= $row->email ?></td>
-										<td><?= $row->firstname ?></td>
-										<td><?= $row->lastname ?></td>
-										<td><?= $row->username ?></td>
-										<td><?= $row->password ?></td>
-									</tr>
-								<?php endforeach; ?>
-							</tbody>
-						</table>
+		</header>
+
+		<main>
+			<div class="topology">
+				<h1>Manage Order</h1>
+				<div class="hello_container">
+					<div class="order-card hello">
+						<h2 class="customer-name">Customer Name</h2>
+						<p class="ordered-time">Ordered Time: [Date and Time]</p>
+						<p class="num-vlans">Number of VLANs: [Number]</p>
+						<ul class="host-list">
+							<li>[Hostname 1]</li>
+							<li>[Hostname 2]</li>
+							<li>[Hostname 3]</li>
+							<!-- ... -->
+							<li>[Hostname N]</li>
+						</ul>
+						<!-- <button class="test_btn" type="button">Click to Delete</button> <br> -->
+						<button class="test_btn" type="button">Click to Delete</button>
+					</div>
+					<div class="order-card hello">
+						<h2 class="customer-name">Customer Name</h2>
+						<p class="ordered-time">Ordered Time: [Date and Time]</p>
+						<p class="num-vlans">Number of VLANs: [Number]</p>
+						<ul class="host-list">
+							<li>[Hostname 1]</li>
+							<li>[Hostname 2]</li>
+							<li>[Hostname 3]</li>
+							<!-- ... -->
+							<li>[Hostname N]</li>
+						</ul>
+						<!-- <button class="test_btn" type="button">Click to Delete</button> <br> -->
+						<button class="test_btn" type="button">Click to Delete</button>
+					</div>
+					<div class="order-card hello">
+						<h2 class="customer-name">Customer Name</h2>
+						<p class="ordered-time">Ordered Time: [Date and Time]</p>
+						<p class="num-vlans">Number of VLANs: [Number]</p>
+						<ul class="host-list">
+							<li>[Hostname 1]</li>
+							<li>[Hostname 2]</li>
+							<li>[Hostname 3]</li>
+							<!-- ... -->
+							<li>[Hostname N]</li>
+						</ul>
+						<!-- <button class="test_btn" type="button">Click to Delete</button> <br> -->
+						<button class="test_btn" type="button">Click to Delete</button>
+					</div>
+					<div class="order-card hello">
+						<h2 class="customer-name">Customer Name</h2>
+						<p class="ordered-time">Ordered Time: [Date and Time]</p>
+						<p class="num-vlans">Number of VLANs: [Number]</p>
+						<ul class="host-list">
+							<li>[Hostname 1]</li>
+							<li>[Hostname 2]</li>
+							<li>[Hostname 3]</li>
+							<!-- ... -->
+							<li>[Hostname N]</li>
+						</ul>
+						<!-- <button class="test_btn" type="button">Click to Delete</button> <br> -->
+						<button class="test_btn" type="button">Click to Delete</button>
+					</div>
+					<div class="order-card hello">
+						<h2 class="customer-name">Customer Name</h2>
+						<p class="ordered-time">Ordered Time: [Date and Time]</p>
+						<p class="num-vlans">Number of VLANs: [Number]</p>
+						<ul class="host-list">
+							<li>[Hostname 1]</li>
+							<li>[Hostname 2]</li>
+							<li>[Hostname 3]</li>
+							<!-- ... -->
+							<li>[Hostname N]</li>
+						</ul>
+						<!-- <button class="test_btn" type="button">Click to Delete</button> <br> -->
+						<button class="test_btn" type="button">Click to Delete</button>
+					</div>
+
+				</div>
+			</div>
+			<div class="collapse">
+				<button type="button" class="collapsible">Open Collapsible</button>
+				<div class="content">
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias at quas sunt eveniet voluptate, adipisci fugit dolorum libero sit eaque nobis nam, ex repellendus nostrum tenetur asperiores obcaecati perspiciatis deserunt.</p>
+				</div>
+				<button type="button" class="collapsible">Open Collapsible</button>
+				<div class="content">
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias at quas sunt eveniet voluptate, adipisci fugit dolorum libero sit eaque nobis nam, ex repellendus nostrum tenetur asperiores obcaecati perspiciatis deserunt.</p>
 				</div>
 
+				<table id="userstable">
+					<th>
+						<tr>
+							<th>Name</th>
+							<th>Email</th>
+							<th>Departments</th>
+							<th>Users</th>
+						</tr>
+					</th>
+					<tbody>
+						<?php foreach ($data->data as $row) : ?>
+							<tr>
+								<td><?= $row->id ?></td>
+								<td><?= $row->email ?></td>
+								<td><?= $row->firstname ?></td>
+								<td><?= $row->lastname ?></td>
+								<td><?= $row->username ?></td>
+								<td><?= $row->password ?></td>
+							</tr>
+						<?php endforeach; ?>
+					</tbody>
+				</table>
+			</div>
 
-			</main>
+
+		</main>
 	</div>
-	
-	<footer>
-			<p>Dang Nam Khanh, Le Xuan Nhat, Duong Quang Thanh</p>
-			<p>Copyright &copy; 2023 TNE:GO. All rights Reserved</p>
-	</footer>
-	
-	<script src="js/animation.js"></script>
-		
-</body>
-</html>
 
+	<footer>
+		<p>Dang Nam Khanh, Le Xuan Nhat, Duong Quang Thanh</p>
+		<p>Copyright &copy; 2023 TNE:GO. All rights Reserved</p>
+	</footer>
+
+	<script src="js/animation.js"></script>
+
+</body>
+
+</html>

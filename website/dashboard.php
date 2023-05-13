@@ -1,3 +1,8 @@
+<?php
+//if logged in, go to manager page
+    session_start();
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -20,9 +25,18 @@
                     <label for="button" id="nav_icon"><i class="fa-solid fa-bars"></i></label>
                     <ul>
                         <li ><a href="index.php">Homepage</a></li>
-                        <li><a href="dashboard.php">Dashboard</a></li>
+                        <li class="active"><a href="dashboard.php">Dashboard</a></li>
                         <li ><a href="ourteam.php">Our Team</a></li>
-                        <li ><a href="login.php">Login</a></li>
+						<?php
+							if (isset($_SESSION['admin']) && $_SESSION['admin']) {
+								echo "<li><a href='admin.php'>Admin</a></li>";
+							}
+							if ((isset($_SESSION['authenticated']) && $_SESSION['authenticated']) || (isset($_SESSION['admin']) && $_SESSION['admin'])) {
+								echo "<li><a href='logout.php'>Logout</a></li>";    
+							} else {
+								echo "<li><a href='login.php'>Login</a></li>";
+							}
+						?>
                     </ul>
 
                 </div>
