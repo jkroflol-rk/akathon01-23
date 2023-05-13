@@ -129,8 +129,9 @@ $data = json_decode($response);
 										<!-- <button class="test_btn" type="button">Click to Delete</button> <br> -->
 										<button class="test_btn" type="button">Click to Delete</button>
 								</div>
+								
+							</div>
 						</div>
-				</div>
 				<div class="collapse">
 						<button type="button" class="collapsible">Open Collapsible</button>
 						<div class="content">
@@ -141,32 +142,31 @@ $data = json_decode($response);
 								<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias at quas sunt eveniet voluptate, adipisci fugit dolorum libero sit eaque nobis nam, ex repellendus nostrum tenetur asperiores obcaecati perspiciatis deserunt.</p>
 						</div>
 
+						<table id="userstable">
+							<th>
+								<tr>
+									<th>Name</th>
+									<th>Email</th>
+									<th>Departments</th>
+									<th>Users</th>
+								</tr>
+							</th>
+							<tbody>
+								<?php foreach ($data->data as $row): ?>
+									<tr>
+										<td><?= $row->id ?></td>
+										<td><?= $row->email ?></td>
+										<td><?= $row->firstname ?></td>
+										<td><?= $row->lastname ?></td>
+										<td><?= $row->username ?></td>
+										<td><?= $row->password ?></td>
+									</tr>
+								<?php endforeach; ?>
+							</tbody>
+						</table>
 				</div>
 
-				<table id="userstable">
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>Email</th>
-			<th>Departments</th>
-			<th>Users</th>
-			
-		</tr>
-		<br>
-	</thead>
-	<tbody>
-		<?php foreach ($data->data as $row): ?>
-			<tr>
-				<td><?= $row->id ?></td>
-				<td><?= $row->email ?></td>
-				<td><?= $row->firstname ?></td>
-				<td><?= $row->lastname ?></td>
-				<td><?= $row->username ?></td>
-				<td><?= $row->password ?></td>
-			</tr>
-		<?php endforeach; ?>
-	</tbody>
-</table>
+
 			</main>
 	</div>
 	
