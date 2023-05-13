@@ -5,11 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.css">
-    <link rel="stylesheet" href="style/form.css">
     <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+    <link rel="stylesheet" href="style/form.css">
     <script src="js/form.js"></script>
     <title>Information</title>
 </head>
@@ -21,7 +21,7 @@
 
             
             <nav>
-                <h1>TNE:GO</h1>66
+                <h1>TNE:GO</h1>
                 <div class="nav_links">
                     <input type="checkbox" id="button">
                     <!-- <label for="button" id="nav_icon"><img src="images/nav.png" alt="navbar"></label> -->
@@ -40,7 +40,7 @@
         
         <main>
             <div class="login_space">
-                <form action="authentication.php" method="POST" class="animate__animated animate__fadeInRight">
+                <form action="authentication.php" method="POST" class="animate__animated animate__fadeInRight" autocomplete="off">
                     <div class="loginform">
                         <h1>Login</h1>
                         <form method="post" action="authentication.php">

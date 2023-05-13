@@ -9,6 +9,15 @@ html{
   scroll-behavior: smooth;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
+
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+}
+
 body {
   background-image: url("../images/bg.png");
   background-repeat: no-repeat;
@@ -1251,6 +1260,16 @@ form .input_field {
 
 .pra-content{
   padding: 15px;
+}
+
+input:-internal-autofill-selected {
+  background-color: inherit !important;
+  background-image: none !important;
+  color: inherit !important;
+  background: none;
+  background-image: none !important;
+  background-color: -internal-light-dark(transparent) !important;
+
 }
 
 

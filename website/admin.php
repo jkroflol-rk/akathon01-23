@@ -13,12 +13,8 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 ));
 $response = curl_exec($ch);
 curl_close($ch);
-$pass = "jane.doe@example.com";
-echo $pass;
 
 $data = json_decode($response);
-$username = $_POST["username"];
-$password = $_POST["password"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -167,17 +163,6 @@ $password = $_POST["password"];
 				<td><?= $row->lastname ?></td>
 				<td><?= $row->username ?></td>
 				<td><?= $row->password ?></td>
-
-				<?php
-					if (($password == $row->password) && ($username == $row->username && ($row->admin == "true"))){
-						header('Location: https://rt-kc.github.io/akathon01-23/website/index.html');
-						
-					}else if (($password == $row->password) && ($username == $row->username)){
-						echo $row->username;
-						header('Location: http://www.example.com/');
-					}
-					
-				?>
 			</tr>
 		<?php endforeach; ?>
 	</tbody>
