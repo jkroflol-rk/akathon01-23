@@ -1,4 +1,6 @@
 <?php
+    session_start();
+
     require_once("./functions/functions.php");
 
     $url = "https://b81155ba-05ce-415b-9ca4-b83d935e46a6-asia-south1.apps.astra.datastax.com/api/rest/v2/keyspaces/test/users/rows";
@@ -26,6 +28,7 @@
   foreach ($data->data as $row) {
     if (($password == $row->password) && ($username == $row->username && ($row->admin == "true"))) {
       header('Location: admin.php');
+      $_SESSION['authenticated'] = true;
       exit();
     } else if (($password == $row->password) && ($username == $row->username)) {
       header('Location: dashboard.php');

@@ -1,4 +1,14 @@
 <?php
+//if logged in, go to manager page
+	session_start();
+	if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
+		// header("Location: ./dashboard.php");
+	}else{
+		header('Location: ./login.php');
+	}
+?>
+
+<?php
 
 $url = "https://b81155ba-05ce-415b-9ca4-b83d935e46a6-asia-south1.apps.astra.datastax.com/api/rest/v2/keyspaces/test/users/rows";
 $token = "AstraCS:PXhWiFwCPFWfmLXqOGtkOlCU:ef2043b13fcc33dd3e63368eabf3a4379cf561fda6dec8ae2490832acde2ab39";
@@ -16,6 +26,7 @@ curl_close($ch);
 
 $data = json_decode($response);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

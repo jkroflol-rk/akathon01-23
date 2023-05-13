@@ -35,7 +35,7 @@
                 <div class="dashboard_content">
                     <h1>Dashboard</h1>
                     <div class="menuoption">
-                        <a href="editprofile.html">
+                        <a href="editprofile.php">
 
                             <div class="dashcard ">
                                 <div class="card1st">
@@ -48,7 +48,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="service.html">
+                        <a href="service.php">
 
                             <div class="dashcard ">
                                 <div class="card1st">
@@ -60,7 +60,7 @@
                             </div>
                         </a>
                         
-                        <a href="form.html">
+                        <a href="vieworder.php">
 
                             <div class="dashcard ">
                                 <div class="card1st">
