@@ -831,7 +831,7 @@ form .input_field {
   line-height: 30px;
 }
 
-#introbutton {
+.introbutton {
   text-align: center;
   text-decoration: none;
   color: black;
@@ -844,7 +844,7 @@ form .input_field {
   font-weight: bold;
 }
 
-#introbutton:hover {
+.introbutton:hover {
   background-color: white;
   color: black;
 }
@@ -1189,6 +1189,74 @@ form .input_field {
     margin: 20px 0;
   }
 }
+
+.dashboard_container{
+  width: 100%;
+  min-height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dashboard_container h1{
+  text-align: center;
+  color: white;
+  display: block;
+  font-size: 37px;
+}
+
+.menuoption{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+.menuoption a{
+  text-decoration: none;
+  color: #0000EE;
+}
+
+.menuoption a:hover{
+  text-decoration: underline;
+}
+
+.dashcard {
+  background: white;
+  overflow: hidden;
+  text-align: center;
+  position: relative;
+  transition: .3s;
+  width: 350px;
+  height: fit-content;
+  margin: 30px;
+}
+
+.dashcard:hover{
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.733);
+  transform: translateY(-5px);
+}
+
+ 
+.card1st{
+  width: 100%;
+  height: 200px;
+} 
+
+.card1st img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pra-content{
+  padding: 15px;
+}
+
+
+
+
+
 
 
 
