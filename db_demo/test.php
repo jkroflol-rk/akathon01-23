@@ -1,7 +1,7 @@
 <?php
 
-$url = "https://d7a28deb-6666-4314-9584-01ed5d2c5b69-asia-south1.apps.astra.datastax.com/api/rest/v2/keyspaces/test/users/rows";
-$token = "AstraCS:nMFywxEBGfZHlpXqBKAbtbQn:74cfd0b1913e2033cc672e3201d56a03f0641bbd6d82f8fca259463b46915410";
+$url = "https://b81155ba-05ce-415b-9ca4-b83d935e46a6-asia-south1.apps.astra.datastax.com/api/rest/v2/keyspaces/test/users/rows";
+$token = "AstraCS:PXhWiFwCPFWfmLXqOGtkOlCU:ef2043b13fcc33dd3e63368eabf3a4379cf561fda6dec8ae2490832acde2ab39";
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_URL, $url);
@@ -29,19 +29,19 @@ $data = json_decode($response);
   <table id="userstable">
     <thead>
       <tr>
-        <th>Name</th>
+        <th>ID</th>
         <th>Email</th>
-        <th>Departments</th>
-        <th>Users</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
       </tr>
     </thead>
     <tbody>
       <?php foreach ($data->data as $row): ?>
         <tr>
-          <td><?= $row->name ?></td>
+          <td><?= $row->id ?></td>
           <td><?= $row->email ?></td>
-          <td><?= $row->departments ?></td>
-          <td><?= $row->users ?></td>
+          <td><?= $row->firstname ?></td>
+          <td><?= $row->lastname ?></td>
         </tr>
       <?php endforeach; ?>
     </tbody>
