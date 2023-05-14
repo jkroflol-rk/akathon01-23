@@ -1,5 +1,5 @@
 <?php 
-include('./conn/func.php');
+include("./conn/func.php");
 // Get the submitted department number
 $department_num = $_POST['departments'];
 
@@ -7,16 +7,15 @@ $department_num = $_POST['departments'];
 $name = $_POST['name'];
 $host = $_POST['host'];
 
-$data = array();
+$output = array();
+
 for ($i = 0; $i < $department_num; $i++) {
-    $data[$name[$i]] = $host[$i];
+  $item = array('key' => $name[$i], 'value' => $host[$i]);
+  array_push($output, $item);
 }
 
-$json = json_encode($data);
-echo $json;
-
 $rdata = [
-    "vlans" => $json
+    "vlans" => $output
 ];
 
 $response = updateData("users", $rdata, "eb0b3769-9bec-47dc-9ef9-d1e1bbced599");
