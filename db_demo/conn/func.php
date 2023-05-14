@@ -32,7 +32,7 @@
     // 3 tables
     function getData($table)
     {
-        $url = "https://b81155ba-05ce-415b-9ca4-b83d935e46a6-asia-south1.apps.astra.datastax.com/api/rest/v2/keyspaces/test/" + $table + "/rows/";
+        $url = "https://b81155ba-05ce-415b-9ca4-b83d935e46a6-asia-south1.apps.astra.datastax.com/api/rest/v2/keyspaces/test/$table/rows/";
 
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -56,7 +56,7 @@
     //admin - users and devices
     function deleteData($table, $primaryKey, $clusterKey)
     {
-        $url = "https://b81155ba-05ce-415b-9ca4-b83d935e46a6-asia-south1.apps.astra.datastax.com/api/rest/v2/keyspaces/test/" + $table + "/" + $primaryKey + "/" + $clusterKey;
+        $url = "https://b81155ba-05ce-415b-9ca4-b83d935e46a6-asia-south1.apps.astra.datastax.com/api/rest/v2/keyspaces/test/$table/$primaryKey/$clusterKey";
 
         $ch = curl_init($url);
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
@@ -73,13 +73,13 @@
 
         $response = curl_exec($ch);
         curl_close($ch);
-
-        $data = json_decode($response);
+        
+        return $response;
     }
 
     function updateData($table, $data, $primaryKey, $clusterKey)
     {
-        $url = "https://b81155ba-05ce-415b-9ca4-b83d935e46a6-asia-south1.apps.astra.datastax.com/api/rest/v2/keyspaces/test/" + $table + "/" + $primaryKey + "/" + $clusterKey;
+        $url = "https://b81155ba-05ce-415b-9ca4-b83d935e46a6-asia-south1.apps.astra.datastax.com/api/rest/v2/keyspaces/test/$table/$primaryKey/$clusterKey";
 
         $data_string = json_encode($data);
 
@@ -100,13 +100,14 @@
         $response = curl_exec($ch);
         curl_close($ch);
 
-        $data = json_decode($response);
-
+        return $response;
     }
 
     //users, layouts
-    function postData($url, $data)
+    function postData($table, $data)
     {
+        $url = "https://b81155ba-05ce-415b-9ca4-b83d935e46a6-asia-south1.apps.astra.datastax.com/api/rest/v2/keyspaces/test/$table";
+
         $data_string = json_encode($data);
 
         $ch = curl_init($url);
@@ -123,19 +124,6 @@
         $response = curl_exec($ch);
         curl_close($ch);
 
-        $data = json_decode($response);
+        return $response;
     }
-
-    //Example
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $favorite_color = $_POST['favorite_color'];
-
-    $exampleData = [
-        "firstname" => $name,
-        "email" => $email,
-        "password" => $password,
-        "favorite color" => $favorite_color
-    ];
 ?>
