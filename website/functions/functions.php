@@ -6,6 +6,8 @@
         $data = htmlspecialchars($data);
         return $data;
     }
+
+    
     
     function array_data_fetch($arr, $key, $default)
     {

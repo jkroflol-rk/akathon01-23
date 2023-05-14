@@ -1,6 +1,8 @@
 <?php
 //if logged in, go to manager page
 	session_start();
+    echo $_SESSION['userid'];
+
 	if ((isset($_SESSION['authenticated']) && $_SESSION['authenticated']) || (isset($_SESSION['admin']) && $_SESSION['admin'])) {
 
 	}else{
