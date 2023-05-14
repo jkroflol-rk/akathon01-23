@@ -1,11 +1,11 @@
 <?php
 //if logged in, go to manager page
-	session_start();
-	if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
-		// header("Location: ./dashboard.php");
-	}else{
-		header('Location: ./login.php');
-	}
+    session_start();
+    if ((isset($_SESSION['authenticated']) && $_SESSION['authenticated']) || (isset($_SESSION['admin']) && $_SESSION['admin'])) {
+        
+    }else{
+        header('Location: ./login.php');
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

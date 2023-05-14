@@ -64,7 +64,7 @@ $data = json_decode($response);
 							if (isset($_SESSION['admin']) && $_SESSION['admin']) {
 								echo "<li class='active'><a href='admin.php'>Admin</a></li>";
 							}
-							if (isset($_SESSION['authenticated']) && $_SESSION['authenticated']) {
+							if ((isset($_SESSION['authenticated']) && $_SESSION['authenticated']) || (isset($_SESSION['admin']) && $_SESSION['admin'])) {
 								echo "<li><a href='logout.php'>Logout</a></li>";
 							} else {
 								echo "<li><a href='login.php'>Login</a></li>";
