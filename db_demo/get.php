@@ -4,6 +4,11 @@ include('./conn/func.php');
 
 $data = getData("users");
 
+$timestamp = new DateTime('now', new DateTimeZone('Asia/Bangkok'));
+$cql_timestamp = $timestamp->format('Y-m-d\TH:i:sP');
+
+echo $cql_timestamp; // Output: 2023-05-12T14:30:15+07:00
+
 ?>
 
 <!DOCTYPE html>
