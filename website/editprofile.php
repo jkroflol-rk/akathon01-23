@@ -2,7 +2,7 @@
 //if logged in, go to manager page
 	session_start();
 	if ((isset($_SESSION['authenticated']) && $_SESSION['authenticated']) || (isset($_SESSION['admin']) && $_SESSION['admin'])) {
-		// header("Location: ./dashboard.php");
+
 	}else{
 		header('Location: ./login.php');
 	}
@@ -42,7 +42,16 @@
                         <li ><a href="index.php">Homepage</a></li>
                         <li><a href="Dashboard.php">Dashboard</a></li>
                         <li ><a href="ourteam.php">Our Team</a></li>
-                        <li ><a href="login.php">Login</a></li>
+                        <?php
+                            if (isset($_SESSION['admin']) && $_SESSION['admin']) {
+								echo "<li><a href='admin.php'>Admin</a></li>";
+							}
+							if ((isset($_SESSION['authenticated']) && $_SESSION['authenticated']) || (isset($_SESSION['admin']) && $_SESSION['admin'])) {
+								echo "<li><a href='logout.php'>Logout</a></li>";    
+							} else {
+								echo "<li><a href='login.php'>Login</a></li>";
+							}
+						?>
                     </ul>
 
                 </div>
