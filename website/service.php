@@ -50,7 +50,7 @@
         
         <main>
             <div id="form-container" class="animate__animated animate__fadeInDown">
-                <form action="https://mercury.swin.edu.au/it000000/formtest.php" method="POST" id="form">
+                <form action="map.php" method="POST" id="form">
                     <h1>LAN Design</h1>
                     <label for="departments">Enter the number of Departments:</label>
                     <input type="number" name="departments" id="departments" placeholder="Max departments is 5, additional fields will be shown!" max="5" required>

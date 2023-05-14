@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if (isset($_POST["firstname"]) && $_POST['firstname'] != "") {
+    if (isset($_POST["fname"]) && $_POST['fname'] != "") {
         $firstname = sanitise_input($_POST["firstname"]);
 
     if (!preg_match("/^[a-zA-Z]*$/", $firstname)) {
@@ -10,6 +10,7 @@
     }
     } else {
         $errors["firstname"] = "Please enter your first name";
-    }
+    }   
 
+    
 ?>
