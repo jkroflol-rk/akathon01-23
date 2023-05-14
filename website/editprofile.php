@@ -23,7 +23,13 @@
     curl_close($ch);
 
     $data = json_decode($response);
-    ?>
+
+    foreach ($data->data as $row) {
+        if ($row->id == $_SESSION['userid']){
+
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -86,54 +92,49 @@
 
                                 <div class="left_registration">
                                     <div class="input_field">
-                                        <input type="text" name="fname" id="fname" required autocomplete="off">
+                                        <input type="text" name="fname" id="fname" required autocomplete="off" value="<?= $_SESSION['row']->firstname ?>">
                                         <span></span>
                                         <label for="fname">Firstname:</label>
                                     </div>
                                     
                                     <div class="input_field">
-                                        <input type="text" name="email" id="email" required autocomplete="off">
+                                        <input type="text" name="email" id="email" required autocomplete="off" value="<?= $_SESSION['row']->email ?>">
                                         <span></span>
                                         <label for="email">Email:</label>
                                     </div>
-    
+
                                     <div class="input_field">
-                                        <input type="text" name="username" id="username" required autocomplete="off">
+                                        <input type="password" name="newpassword" id="newpassword" required autocomplete="off" value="">
                                         <span></span>
-                                        <label for="username">Username:</label>
+                                        <label for="newpassword">New password:</label>
                                     </div>
 
                                     <div class="input_field">
-                                        <input type="password" name="newpassword" id="newpassword" required autocomplete="off">
+                                        <input type="password" name="repassword" id="repassword" required autocomplete="off" value="">
                                         <span></span>
-                                        <label for="newpassword">New password:</label>
+                                        <label for="repassword">Retype your new password:</label>
                                     </div>
                                 </div>
 
                                 <div class="right_registration">
                                     <div class="input_field">
-                                        <input type="text" name="lname" id="lname" required autocomplete="off">
+                                        <input type="text" name="lname" id="lname" required autocomplete="off" value="<?= $_SESSION['row']->lastname ?>">
                                         <span></span>
                                         <label for="lname">Lastname:</label>
                                     </div>
     
                                     <div class="input_field">
-                                        <input type="tel" name="phone" id="phone" required autocomplete="off">
+                                        <input type="tel" name="phone" id="phone" required autocomplete="off" value="<?= $_SESSION['row']->phone ?>">
                                         <span></span>
                                         <label for="phone">Phone number:</label>
                                     </div>
     
                                     <div class="input_field">
-                                        <input type="password" name="password" id="password" required autocomplete="off">
+                                        <input type="password" name="password" id="password" required autocomplete="off" value="">
                                         <span></span>
                                         <label for="password">Current password:</label>
                                     </div>
     
-                                    <div class="input_field">
-                                        <input type="password" name="repassword" id="repassword" required autocomplete="off">
-                                        <span></span>
-                                        <label for="repassword">Retype your new password:</label>
-                                    </div>
                                 </div>
                             </div>
 

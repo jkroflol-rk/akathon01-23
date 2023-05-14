@@ -30,14 +30,17 @@
       header('Location: admin.php');
       $_SESSION['admin'] = true;
       $_SESSION['userid'] = $row->id;
+      $_SESSION['row'] = $row;
       exit();
     } else if (($password == $row->password) && ($username == $row->username)) {
       header('Location: dashboard.php');
       $_SESSION['authenticated'] = true;
       $_SESSION['userid'] = $row->id;
+      $_SESSION['row'] = $row;
       exit();
     }else{
       header('Location: login.php');
     }
   }
+
 ?>
