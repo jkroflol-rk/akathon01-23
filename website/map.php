@@ -1,4 +1,6 @@
 <?php 
+session_start();
+
 include("./conn/func.php");
 // Get the submitted department number
 $department_num = $_POST['departments'];
@@ -6,6 +8,7 @@ $department_num = $_POST['departments'];
 // Get the submitted names and hosts as arrays
 $name = $_POST['name'];
 $host = $_POST['host'];
+
 
 $output = array();
 
@@ -18,7 +21,13 @@ $rdata = [
     "vlans" => $output
 ];
 
-$response = updateData("users", $rdata, "eb0b3769-9bec-47dc-9ef9-d1e1bbced599");
+$response = updateData("users", $rdata, $_SESSION['userid']);
 
 echo $response;
+
+$op = convertVlan($rdata);
+
+echo $op;
+
+header('Location: ./cryptoscam.php');
 ?>
