@@ -133,7 +133,7 @@ function postData($table, $data)
 function convertVlan($input)
 {
     // Convert the input JSON string to a PHP array
-    $vlans = $input["data"]["vlans"];
+    $vlans = $input['vlans'];
 
     // Initialize an empty array to hold the output
     $output = array();
@@ -142,7 +142,8 @@ function convertVlan($input)
     foreach ($vlans as $vlan) {
         // Create a new VLAN object with the specified ID and host
         $vlanObj = array(
-            "id" => $vlan["key"],
+            "id" => "",
+            "name" => $vlan["key"],
             "host" => $vlan["value"],
             "port" => array(
                 array(

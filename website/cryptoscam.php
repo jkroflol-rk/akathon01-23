@@ -19,6 +19,10 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
+    <script src="https://unpkg.com/cytoscape@3.24.0/dist/cytoscape.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dagre/0.8.5/dagre.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cytoscape-dagre@2.5.0/cytoscape-dagre.min.js"></script>
+    <link rel="stylesheet" href="style/test.css">
     <script src="js/form.js"></script>
     <title>Information</title>
 </head>
@@ -56,7 +60,9 @@
         </header>
         
         <main>
-            
+            <?php header('Location: ./cryptoscam.php'); ?>
+            <div id="cy"></div>
+            <script src="./js/final.js"></script>
         </main>
     </div>
         
