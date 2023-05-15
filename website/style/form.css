@@ -1047,9 +1047,10 @@ form .input_field {
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .collapse{
-  height: 50vh;
+  height: fit-content;
   background: white;
-  width: 50%;
+  width: 100%;
+  padding: 100px;
 }
 
 .collapsible {
@@ -1271,6 +1272,150 @@ input:-internal-autofill-selected {
   background-color: -internal-light-dark(transparent) !important;
 
 }
+
+.product-box {
+  /*Reuse item box css in index, but change unique property for product.html*/
+  /* margin: 20px; */
+  border: 1px solid black;
+  border-radius: 15px;
+  transition: .3s;
+}
+
+.item-box {
+  position: relative;
+  overflow: hidden;
+  width: 300px;
+  height: 400px;
+}
+
+.item-box:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.199);
+}
+
+.item-box img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 10px;
+}
+
+.item-box h2 {
+  font-size: 14px;
+  margin: 0;
+  text-align: center;
+}
+
+.item-box h3 {
+  font-size: 10px;
+  margin: 0;
+  text-align: center;
+}
+
+.item-box p {
+  color: #333;
+  text-align: center;
+  font-size: 10px;
+}
+
+.item-box a {
+  text-decoration: none;
+}
+
+.extra-content {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: -100%;
+  position: absolute;
+  background: rgba(46, 98, 107, 0.1);
+  /* backdrop-filter: blur(2px); */
+  color: white;
+  border-radius: 15px;
+  justify-content: center;
+  transition: .3s;
+  padding: 10px;
+  padding-top: 33px;
+
+}
+
+.item-box:hover .extra-content {
+  right: 0;
+
+}
+
+.extra-content li {
+  flex: none;
+}
+
+.extra-content ul {
+  display: inline-block;
+
+}
+
+.extra-content p {
+  font-size: 18px;
+  color: white;
+}
+
+.extra-content table,
+td {
+  border-bottom: 2px solid green; 
+  border-collapse: collapse;
+  padding: 7px;
+  color: red;
+  /* text-align: center; */
+  font-size: 12px;
+}
+
+.extra-content table {
+  border-radius: 5px;
+  overflow: hidden;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  transition: .4s;
+  left: 200px;
+  background-color: rgba(255, 255, 255, 0.803);
+}
+
+.item-box:hover .extra-content table {
+  left: 0;
+}
+.extra-content table th {
+  border-bottom: 2px solid green;
+  padding: 10px;
+  /* background-color: #101010; */
+  color: black;
+  text-align: center;
+  font-size: 12px;
+}
+
+.extra-content p {
+  font-size: 15px;
+}
+
+/* buy button */
+
+.extra-content a {
+  margin-top: 20px;
+  color: white;
+  border: 1px solid;
+  text-align: center;
+  padding: 3px;
+  width: 50px;
+  border-radius: 3px;
+  background-color: green;
+  transition: .3s;
+}
+
+.extra-content a:hover{
+  color: #000;
+  background-color: rgb(0, 217, 0);
+}
+
 
 
 
