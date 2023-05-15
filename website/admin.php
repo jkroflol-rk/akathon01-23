@@ -250,8 +250,58 @@ $data = json_decode($response);
 
 					</div>
 				</div>
+				<div class="item-box product-box">
 
+					<img src="images/sw2960.jpg" alt="Item image 1">
+					<h2>Cisco Catalyst 2960</h2>
+					<h2>&#36;539</h2>
 
+					<div class="extra-content">
+						<table>
+							<tr>
+								<th>Size</th>
+								<td>19inches, 4.45cm in height</td>
+							</tr>
+							<tr>
+								<th>Weight</th>
+								<td>2.27kg to 3.18kg</td>
+							</tr>
+							<tr>
+								<th>Price</th>
+								<td>Gigabyte B460M DS3H</td>
+							</tr>
+							<tr>
+								<th>Port</th>
+								<td>48 ports</td>
+							</tr>
+							<tr>
+								<th>Bandwidth</th>
+								<td>100 Mbps</td>
+							</tr>
+							<tr>
+								<th>Link</th>
+								<td>Support layer 2, used for connecting device</td>
+							</tr>
+							<tr>
+								<th>SSD</th>
+								<td>Kingston A400 240GB</td>
+							</tr>
+							<tr>
+								<th>HDD</th>
+								<td>WD Blue 1TB</td>
+							</tr>
+							<tr>
+								<th>Fan</th>
+								<td>Cooler Master SickleFlow 120</td>
+							</tr>
+						</table>
+						<br>
+						<a href="payment.php?product_id=1">More info</a>
+					</div>
+
+				</div>
+
+			</div>
 		</main>
 	</div>
 
