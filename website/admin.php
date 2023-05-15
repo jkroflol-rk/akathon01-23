@@ -31,6 +31,8 @@ $d_data = getData("devices");
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dagre/0.8.5/dagre.min.js"></script> -->
 	<!-- <script src="https://cdn.jsdelivr.net/npm/cytoscape-dagre@2.5.0/cytoscape-dagre.min.js"></script> -->
 	<!-- <script src="js/djtmeakathon.js"></script> -->
+	<script src="djtmeakathon.js"></script>
+	<script src="input.js"></script>
 	<title>Information</title>
 
 </head>
@@ -68,76 +70,23 @@ $d_data = getData("devices");
 			<div class="topology">
 				<h1>Manage Order</h1>
 				<div class="hello_container">
-					<div class="order-card hello">
-						<h2 class="customer-name">Customer Name</h2>
-						<p class="ordered-time">Ordered Time: [Date and Time]</p>
-						<p class="num-vlans">Number of VLANs: [Number]</p>
-						<ul class="host-list">
-							<li>[Hostname 1]</li>
-							<li>[Hostname 2]</li>
-							<li>[Hostname 3]</li>
-							<!-- ... -->
-							<li>[Hostname N]</li>
-						</ul>
-						<!-- <button class="test_btn" type="button">Click to Delete</button> <br> -->
-						<button class="test_btn" type="button">Click to Delete</button>
-					</div>
-					<div class="order-card hello">
-						<h2 class="customer-name">Customer Name</h2>
-						<p class="ordered-time">Ordered Time: [Date and Time]</p>
-						<p class="num-vlans">Number of VLANs: [Number]</p>
-						<ul class="host-list">
-							<li>[Hostname 1]</li>
-							<li>[Hostname 2]</li>
-							<li>[Hostname 3]</li>
-							<!-- ... -->
-							<li>[Hostname N]</li>
-						</ul>
-						<!-- <button class="test_btn" type="button">Click to Delete</button> <br> -->
-						<button class="test_btn" type="button">Click to Delete</button>
-					</div>
-					<div class="order-card hello">
-						<h2 class="customer-name">Customer Name</h2>
-						<p class="ordered-time">Ordered Time: [Date and Time]</p>
-						<p class="num-vlans">Number of VLANs: [Number]</p>
-						<ul class="host-list">
-							<li>[Hostname 1]</li>
-							<li>[Hostname 2]</li>
-							<li>[Hostname 3]</li>
-							<!-- ... -->
-							<li>[Hostname N]</li>
-						</ul>
-						<!-- <button class="test_btn" type="button">Click to Delete</button> <br> -->
-						<button class="test_btn" type="button">Click to Delete</button>
-					</div>
-					<div class="order-card hello">
-						<h2 class="customer-name">Customer Name</h2>
-						<p class="ordered-time">Ordered Time: [Date and Time]</p>
-						<p class="num-vlans">Number of VLANs: [Number]</p>
-						<ul class="host-list">
-							<li>[Hostname 1]</li>
-							<li>[Hostname 2]</li>
-							<li>[Hostname 3]</li>
-							<!-- ... -->
-							<li>[Hostname N]</li>
-						</ul>
-						<!-- <button class="test_btn" type="button">Click to Delete</button> <br> -->
-						<button class="test_btn" type="button">Click to Delete</button>
-					</div>
-					<div class="order-card hello">
-						<h2 class="customer-name">Customer Name</h2>
-						<p class="ordered-time">Ordered Time: [Date and Time]</p>
-						<p class="num-vlans">Number of VLANs: [Number]</p>
-						<ul class="host-list">
-							<li>[Hostname 1]</li>
-							<li>[Hostname 2]</li>
-							<li>[Hostname 3]</li>
-							<!-- ... -->
-							<li>[Hostname N]</li>
-						</ul>
-						<!-- <button class="test_btn" type="button">Click to Delete</button> <br> -->
-						<button class="test_btn" type="button">Click to Delete</button>
-					</div>
+					<?php foreach ($data->data as $row) : ?>
+						<div class="order-card hello">
+							<h2 class="customer-name">Name: <?= $row->lastname?> <?=$row->firstname?></h2>
+							<p class="ordered-time">Ordered Time: <?= $row->order_time?></p>
+							<p class="num-vlans">Number of Vlans<?= $row->vlan?></p>
+							<ul class="host-list">
+								<li>[Hostname 1]</li>
+								<li>[Hostname 2]</li>
+								<li>[Hostname 3]</li>
+								<li>[Hostname N]</li>
+							</ul>
+							<!-- <button class="test_btn" type="button">Click to Delete</button> <br> -->
+							<!-- <button class="test_btn" type="button">Click to Delete</button> -->
+							<a href="#" class="test_btn">Click to Delete</a>
+						</div>
+
+					<?php endforeach; ?>
 
 				</div>
 			</div>
@@ -292,6 +241,7 @@ $d_data = getData("devices");
 
 				</div>
 			</div>
+
 		</main>
 	</div>
 
