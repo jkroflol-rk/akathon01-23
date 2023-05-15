@@ -198,6 +198,11 @@ $data = json_decode($response);
 						<?php endforeach; ?>
 					</tbody>
 				</table>
+				
+				
+			</div>
+
+			<div class="device_info">
 
 				<div class="item-box product-box">
 
@@ -300,7 +305,6 @@ $data = json_decode($response);
 					</div>
 
 				</div>
-
 			</div>
 		</main>
 	</div>

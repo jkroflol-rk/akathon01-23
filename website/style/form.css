@@ -1109,14 +1109,6 @@ form .input_field {
 }
 
 
-
-
-
-
-
-
-
-
 .order-card {
   background-color: #f2f2f2;
   border-radius: 10px;
@@ -1274,8 +1266,6 @@ input:-internal-autofill-selected {
 }
 
 .product-box {
-  /*Reuse item box css in index, but change unique property for product.html*/
-  /* margin: 20px; */
   border: 1px solid black;
   border-radius: 15px;
   transition: .3s;
@@ -1409,7 +1399,7 @@ td {
   color: white;
   border: 1px solid;
   text-align: center;
-  padding: 3px;
+  padding: 8px;
   width: 50px;
   border-radius: 3px;
   background-color: green;
@@ -1421,6 +1411,12 @@ td {
   background-color: rgb(0, 217, 0);
 }
 
+.device_info{
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  background: white;
+}
 
 
 
