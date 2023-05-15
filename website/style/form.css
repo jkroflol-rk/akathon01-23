@@ -1099,7 +1099,7 @@ form .input_field {
 .topology{
   width: 100%;
   height: fit-content;
-  background: whitesmoke;
+  background: rgba(255, 255, 255, 0.726);
 }
 
 .topology h1{
@@ -1219,9 +1219,6 @@ form .input_field {
   color: #0000EE;
 }
 
-.menuoption a:hover{
-  text-decoration: underline;
-}
 
 .dashcard {
   background: white;
