@@ -24,11 +24,11 @@
 
     $data = json_decode($response);
 
-    foreach ($data->data as $row) {
-        if ($row->id == $_SESSION['userid']){
-
-        }
-    }
+    // foreach ($data->data as $row) {
+    //     if ($row->id == $_SESSION['userid']){
+    //         $_SESSION['row'] = $row;
+    //     }
+    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -84,7 +84,7 @@
         
         <main>
             <div class="login_space">
-                <form action="authentication.php" method="POST" class="animate__animated animate__fadeInRight">
+                <form action="upload.php" method="POST" class="animate__animated animate__fadeInRight">
                     <div class="loginform registrationform">
                         <h1>Edit Your Profile</h1>
                         <form method="post" action="authentication.php" id="registered_form">
@@ -104,13 +104,13 @@
                                     </div>
 
                                     <div class="input_field">
-                                        <input type="password" name="newpassword" id="newpassword" required autocomplete="off" value="">
+                                        <input type="password" name="password" id="password" autocomplete="off" value="">
                                         <span></span>
-                                        <label for="newpassword">New password:</label>
+                                        <label for="password">Current password:</label>
                                     </div>
-
+                                    
                                     <div class="input_field">
-                                        <input type="password" name="repassword" id="repassword" required autocomplete="off" value="">
+                                        <input type="password" name="repassword" id="repassword"  autocomplete="off" value="">
                                         <span></span>
                                         <label for="repassword">Retype your new password:</label>
                                     </div>
@@ -122,17 +122,17 @@
                                         <span></span>
                                         <label for="lname">Lastname:</label>
                                     </div>
-    
+                                    
                                     <div class="input_field">
-                                        <input type="tel" name="phone" id="phone" required autocomplete="off" value="<?= $_SESSION['row']->phone ?>">
+                                        <input type="tel" name="phone" id="phone" required autocomplete="off" value="<?= $_SESSION['row']->phone?>">
                                         <span></span>
                                         <label for="phone">Phone number:</label>
                                     </div>
     
                                     <div class="input_field">
-                                        <input type="password" name="password" id="password" required autocomplete="off" value="">
+                                        <input type="password" name="newpassword" id="newpassword"  autocomplete="off" value="">
                                         <span></span>
-                                        <label for="password">Current password:</label>
+                                        <label for="newpassword">New password:</label>
                                     </div>
     
                                 </div>
@@ -144,29 +144,6 @@
                     </div>
                 </form>
             </div>
-            <table id="userstable">
-					<th>
-						<tr>
-							<th>Name</th>
-							<th>Email</th>
-							<th>Departments</th>
-							<th>Users</th>
-						</tr>
-					</th>
-					<tbody>
-						<?php foreach ($data->data as $row) : ?>
-							<tr>
-								<td><?= $row->id ?></td>
-								<td><?= $row->email ?></td>
-								<td><?= $row->firstname ?></td>
-								<td><?= $row->lastname ?></td>
-								<td><?= $row->username ?></td>
-								<td><?= $row->password ?></td>
-							</tr>
-						<?php endforeach; ?>
-					</tbody>
-				</table>
-            
         </main>
     </div>
     
