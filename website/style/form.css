@@ -1109,14 +1109,6 @@ form .input_field {
 }
 
 
-
-
-
-
-
-
-
-
 .order-card {
   background-color: #f2f2f2;
   border-radius: 10px;
@@ -1274,8 +1266,6 @@ input:-internal-autofill-selected {
 }
 
 .product-box {
-  /*Reuse item box css in index, but change unique property for product.html*/
-  /* margin: 20px; */
   border: 1px solid black;
   border-radius: 15px;
   transition: .3s;
@@ -1285,13 +1275,19 @@ input:-internal-autofill-selected {
   position: relative;
   overflow: hidden;
   width: 300px;
-  height: 400px;
+  height: 450px;
 }
 
 .item-box:hover {
-  transform: scale(1.02);
+  /* transform: scale(1.01); */
   box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.199);
 }
+
+.item-box:hover~.item-box img{
+  /* backdrop-filter: blur(2px); */
+
+}
+
 
 .item-box img {
   width: 100%;
@@ -1334,7 +1330,7 @@ input:-internal-autofill-selected {
   color: white;
   border-radius: 15px;
   justify-content: center;
-  transition: .3s;
+  transition: .3s .2s;
   padding: 10px;
   padding-top: 33px;
 
@@ -1361,7 +1357,7 @@ input:-internal-autofill-selected {
 
 .extra-content table,
 td {
-  border-bottom: 2px solid green; 
+  border-bottom: 1px solid green; 
   border-collapse: collapse;
   padding: 7px;
   color: red;
@@ -1376,16 +1372,16 @@ td {
   margin-left: auto;
   margin-right: auto;
   position: relative;
-  transition: .4s;
+  transition: .4s .3s;
   left: 200px;
-  background-color: rgba(255, 255, 255, 0.803);
+  background-color: rgba(255, 255, 255, 0.89);
 }
 
 .item-box:hover .extra-content table {
   left: 0;
 }
 .extra-content table th {
-  border-bottom: 2px solid green;
+  border-bottom: 1px solid green;
   padding: 10px;
   /* background-color: #101010; */
   color: black;
@@ -1403,13 +1399,11 @@ td {
   color: white;
   border: 1px solid;
   text-align: center;
-  padding: 3px;
+  padding: 8px;
   width: 50px;
   border-radius: 3px;
   background-color: green;
   transition: .3s;
-  margin-left: auto;
-  margin-right: ;
 }
 
 .extra-content a:hover{
@@ -1417,6 +1411,12 @@ td {
   background-color: rgb(0, 217, 0);
 }
 
+.device_info{
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  background: white;
+}
 
 
 
