@@ -51,6 +51,12 @@
             <div class="login_space">
                 <form action="authentication.php" method="POST" class="animate__animated animate__fadeInRight" autocomplete="off">
                     <div class="loginform">
+                        <?php
+                            if (isset($_GET['noti'])) {
+                                $noti = urldecode($_GET['noti']);
+                                echo "<p class='noti'>" . $noti . "</p>";
+                            }
+                        ?>
                         <h1>Login</h1>
                         <form method="post" action="authentication.php">
                             <div class="input_field">
