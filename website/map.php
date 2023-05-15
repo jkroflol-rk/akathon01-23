@@ -21,4 +21,8 @@ $rdata = [
 $response = updateData("users", $rdata, "eb0b3769-9bec-47dc-9ef9-d1e1bbced599");
 
 echo $response;
+
+$op = convertVlan($rdata);
+
+echo $op;
 ?>
