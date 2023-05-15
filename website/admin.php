@@ -14,10 +14,10 @@ $data = getData("users");
 $d_data = getData("devices");
 
 if (isset($_GET['order_id'])) {
-	$del_id = $_GET['order_id'];
-	$delete = deleteData("users", $del_id);
-	echo $delete;
-	header('Location: ./admin.php');
+    $del_id = $_GET['order_id'];
+    $delete = deleteData("users", $del_id);
+    echo $delete;
+    header('Location: ./admin.php');
 }
 ?>
 
@@ -81,16 +81,22 @@ if (isset($_GET['order_id'])) {
 						<div class="order-card hello">
 							<h2 class="customer-name">Name: <?= $row->lastname?> <?=$row->firstname?></h2>
 							<p class="ordered-time">Ordered Time: <?= $row->order_time?></p>
-							<p class="num-vlans">Number of Vlans<?= $row->vlan?></p>
+							<p class="num-vlans">Number of Vlans <?= $row->vlan?></p>
 							<ul class="host-list">
-								<li>[Hostname 1]</li>
+								<?php 
+									$array = $row->vlans;
+									foreach ($array as $dep) {
+										echo "<li>" . $dep->key . ": " . $dep->value . "</li>";
+									}									
+								?>
+							</ul>
+								<!-- <li>[Hostname 1]</li>
 								<li>[Hostname 2]</li>
 								<li>[Hostname 3]</li>
-								<li>[Hostname N]</li>
-							</ul>
+								<li>[Hostname N]</li> -->
 							<!-- <button class="test_btn" type="button">Click to Delete</button> <br> -->
 							<!-- <button class="test_btn" type="button">Click to Delete</button> -->
-							<a href="admin.php?order_id=<?php echo htmlspecialchars($row['id'])?>" onclick="return confirm('Are you sure you want to delete this order?');" class="test_btn">Click to Delete</a>
+							<a href="admin.php?order_id=<?= $row->id?>" class="test_btn">Click to Delete</a>
 
 						</div>
 
