@@ -1285,7 +1285,7 @@ input:-internal-autofill-selected {
   position: relative;
   overflow: hidden;
   width: 300px;
-  height: 400px;
+  height: 450px;
 }
 
 .item-box:hover {
@@ -1400,7 +1400,7 @@ td {
 /* buy button */
 
 .extra-content a {
-  margin-top: 20px;
+  margin-top: 0px;
   color: white;
   border: 1px solid;
   text-align: center;
@@ -1409,6 +1409,7 @@ td {
   border-radius: 3px;
   background-color: green;
   transition: .3s;
+  /* padding: 10px; */
 }
 
 .extra-content a:hover{
