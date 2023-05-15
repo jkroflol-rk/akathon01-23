@@ -190,5 +190,12 @@ function printVlan($input)
     return json_encode($output);
 }
 
-
+function convertTime($timestamp)
+{
+    // Parse the original timestamp string into a DateTime object
+    $datetime = new DateTime($timestamp);
+    // Convert the DateTime object to the desired format
+    $formatted_timestamp = $datetime->format("Y-m-d H:i:s O");
+    echo $formatted_timestamp;
+}
 ?>
