@@ -54,9 +54,9 @@ function getData($table)
 }
 
 //admin - users and devices
-function deleteData($table, $primaryKey, $clusterKey)
+function deleteData($table, $primaryKey)
 {
-    $url = "https://b81155ba-05ce-415b-9ca4-b83d935e46a6-asia-south1.apps.astra.datastax.com/api/rest/v2/keyspaces/test/$table/$primaryKey/$clusterKey";
+    $url = "https://b81155ba-05ce-415b-9ca4-b83d935e46a6-asia-south1.apps.astra.datastax.com/api/rest/v2/keyspaces/test/$table/$primaryKey";
 
     $ch = curl_init($url);
     curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");

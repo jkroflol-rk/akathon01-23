@@ -12,6 +12,13 @@ include('./conn/func.php');
 $data = getData("users");
 
 $d_data = getData("devices");
+
+if (isset($_GET['order_id'])) {
+	$del_id = $_GET['order_id'];
+	$delete = deleteData("users", $del_id);
+	echo $delete;
+	header('Location: ./admin.php');
+}
 ?>
 
 <!DOCTYPE html>
@@ -83,7 +90,8 @@ $d_data = getData("devices");
 							</ul>
 							<!-- <button class="test_btn" type="button">Click to Delete</button> <br> -->
 							<!-- <button class="test_btn" type="button">Click to Delete</button> -->
-							<a href="#" class="test_btn">Click to Delete</a>
+							<a href="admin.php?order_id=<?php echo htmlspecialchars($row['id'])?>" onclick="return confirm('Are you sure you want to delete this order?');" class="test_btn">Click to Delete</a>
+
 						</div>
 
 					<?php endforeach; ?>
