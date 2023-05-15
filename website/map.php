@@ -28,14 +28,6 @@ echo $response;
 $op = convertVlan($rdata);
 
 echo $op;
+
+header('Location: ./cryptoscam.php');
 ?>
-
-<script>
-// Assign the JSON data to a JavaScript variable
-var jsonData = <?php echo $op; ?>;
-
-// Now you can use the jsonData variable in your JavaScript code
-console.log(jsonData);
-</script>
-
-<?php header('Location: ./cryptoscam.php'); ?>

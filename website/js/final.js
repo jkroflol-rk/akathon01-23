@@ -25,69 +25,70 @@ class portObject {
   }
 }
 
-var vlan = [
-  {
-    id: "Management",
-    host: 18,
-    port: [
-      {
-        switch: "",
-        switchport: []
-      }
-    ]
-  },
-  {
-    id: "IT",
-    host: 20,
-    port: [
-      {
-        switch: "",
-        switchport: []
-      }
-    ]
-  },
-  {
-    id: "Student",
-    host: 30,
-    port: [
-      {
-        switch: "",
-        switchport: []
-      }
-    ]
-  },
-  {
-    id: "Teacher",
-    host: 32,
-    port: [
-      {
-        switch: "",
-        switchport: []
-      }
-    ]
-  },
-  {
-    id: "CSGO",
-    host: 25,
-    port: [
-      {
-        switch: "",
-        switchport: []
-      }
-    ]
-  },
-  {
-    id: "Cum Thanh",
-    host: 40,
-    port: [
-      {
-        switch: "",
-        switchport: []
-      }
-    ]
-  },
-];
-// var vlan = jsonData;
+// var vlan = [
+//   {
+//     id: "Management",
+//     host: 18,
+//     port: [
+//       {
+//         switch: "",
+//         switchport: []
+//       }
+//     ]
+//   },
+//   {
+//     id: "IT",
+//     host: 20,
+//     port: [
+//       {
+//         switch: "",
+//         switchport: []
+//       }
+//     ]
+//   },
+//   {
+//     id: "Student",
+//     host: 30,
+//     port: [
+//       {
+//         switch: "",
+//         switchport: []
+//       }
+//     ]
+//   },
+//   {
+//     id: "Teacher",
+//     host: 32,
+//     port: [
+//       {
+//         switch: "",
+//         switchport: []
+//       }
+//     ]
+//   },
+//   {
+//     id: "CSGO",
+//     host: 25,
+//     port: [
+//       {
+//         switch: "",
+//         switchport: []
+//       }
+//     ]
+//   },
+//   {
+//     id: "Cum Thanh",
+//     host: 40,
+//     port: [
+//       {
+//         switch: "",
+//         switchport: []
+//       }
+//     ]
+//   },
+// ];
+var vlan = jsonData;
+console.log(vlan);
 // var vlan = [
 //   {
 //     "id": "Management", "host": 63, "port": [{
