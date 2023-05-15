@@ -38,8 +38,7 @@ if (isset($_GET['order_id'])) {
 	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dagre/0.8.5/dagre.min.js"></script> -->
 	<!-- <script src="https://cdn.jsdelivr.net/npm/cytoscape-dagre@2.5.0/cytoscape-dagre.min.js"></script> -->
 	<!-- <script src="js/djtmeakathon.js"></script> -->
-	<script src="djtmeakathon.js"></script>
-	<script src="input.js"></script>
+
 	<title>Information</title>
 
 </head>
@@ -90,12 +89,6 @@ if (isset($_GET['order_id'])) {
 									}									
 								?>
 							</ul>
-								<!-- <li>[Hostname 1]</li>
-								<li>[Hostname 2]</li>
-								<li>[Hostname 3]</li>
-								<li>[Hostname N]</li> -->
-							<!-- <button class="test_btn" type="button">Click to Delete</button> <br> -->
-							<!-- <button class="test_btn" type="button">Click to Delete</button> -->
 							<a href="admin.php?order_id=<?= $row->id?>" class="test_btn">Click to Delete</a>
 
 						</div>
@@ -105,49 +98,7 @@ if (isset($_GET['order_id'])) {
 				</div>
 			</div>
 			<div class="collapse">
-				<button type="button" class="collapsible">Open Collapsible</button>
-				<div class="content">
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias at quas sunt eveniet voluptate, adipisci fugit dolorum libero sit eaque nobis nam, ex repellendus nostrum tenetur asperiores obcaecati perspiciatis deserunt.</p>
-				</div>
-				<button type="button" class="collapsible">Open Collapsible</button>
-				<div class="content">
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias at quas sunt eveniet voluptate, adipisci fugit dolorum libero sit eaque nobis nam, ex repellendus nostrum tenetur asperiores obcaecati perspiciatis deserunt.</p>
-				</div>
-							
-				<table id="userstable">
-					<th>
-						<tr>
-							<th>id</th>
-							<th>admin</th>
-							<th>email</th>
-							<th>firstname</th>
-							<th>lastname</th>
-							<th>order-time</th>
-							<th>password</th>
-							<th>phone</th>
-							<th>username</th>
-							<th>vlan</th>
-							<th>vlans</th>
-						</tr>
-					</th>
-					<tbody>
-						<?php foreach ($data->data as $row) : ?>
-							<tr>
-								<td><?= $row->id ?></td>
-								<td><?= $row->admin ?></td>
-								<td><?= $row->email ?></td>
-								<td><?= $row->firstname ?></td>
-								<td><?= $row->lastname ?></td>
-								<td><?= $row->order_time ?></td>
-								<td><?= $row->password ?></td>
-								<td><?= $row->phone ?></td>
-								<td><?= $row->username ?></td>
-								<td><?= $row->vlan ?></td>
-								<td><?php echo json_encode($row->vlans); ?></td>
-							</tr>
-						<?php endforeach; ?>
-					</tbody>
-				</table>
+
 				
 				
 			</div>
@@ -265,6 +216,8 @@ if (isset($_GET['order_id'])) {
 	</footer>
 
 	<script src="js/animation.js"></script>
+	<script src="js/djtmeakathon.js"></script>
+	<script src="js/input.js"></script>
 
 </body>
 

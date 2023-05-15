@@ -58,16 +58,17 @@ command_router = GenerateConfigInput(router, portDevice, vlan);
 command_coreSwt = GenerateConfigInput(coreDevice, portDevice, vlan);
 command_distSwt = GenerateConfigInput(distDevice, portDevice, vlan);
 command_access = GenerateConfigInput(accessDevice, portDevice, vlan);
+var box = document.body.childNodes[1].childNodes[3].childNodes[3];
+console.log(box);
 deviceConfig.forEach(command_config => {
-    const box = document.createElement('div');
-    box.class = "collapse";
     var button = document.createElement('button');
     button.innerText = command_config.device;
-    button.class = 'collapsible';
+    button.classList.add('collapsible');
     box.appendChild(button);
     var txt_command = document.createElement('div');
     txt_command.innerText = command_config.config;
-    txt_command.class = 'content';
+    txt_command.classList.add('content');
     box.appendChild(txt_command);
 });
+
 console.log(deviceConfig);
