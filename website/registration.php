@@ -48,10 +48,9 @@
         
         <main>
             <div class="login_space">
-                <form action="authentication.php" method="POST" class="animate__animated animate__fadeInRight">
+                <form action="newacc.php" method="POST" class="animate__animated animate__fadeInRight">
                     <div class="loginform registrationform">
                         <h1>Registration</h1>
-                        <form method="post" action="authentication.php" id="registered_form">
                             <div class="registration_container">
 
                                 <div class="left_registration">
@@ -96,11 +95,10 @@
                                 </div>
                             </div>
 
-                            <input type="submit" value="Login">
+                            <input type="submit" value="Sign up">
                             <div class="signup_link">Already an user? 
                                 <a href="login.php">Sign in</a>
                             </div>
-                        </form>
                     </div>
                 </form>
             </div>
