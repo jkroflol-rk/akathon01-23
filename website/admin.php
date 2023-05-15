@@ -193,7 +193,7 @@ $data = json_decode($response);
 								<td><?= $row->phone ?></td>
 								<td><?= $row->username ?></td>
 								<td><?= $row->vlan ?></td>
-								<!-- <td><?= $row->vlans ?></td> -->
+								<td><?php echo json_encode($row->vlans); ?></td>
 							</tr>
 						<?php endforeach; ?>
 					</tbody>
