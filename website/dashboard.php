@@ -11,6 +11,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.css">
         <link rel="stylesheet" href="style/animation.css">
+	    <link rel="icon" href="images/tabicon.png">
         <link rel="stylesheet" href="style/form.css">
         <title>Information</title>
 

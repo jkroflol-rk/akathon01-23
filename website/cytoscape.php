@@ -36,6 +36,7 @@ $jsonData = printVlan($read);
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dagre/0.8.5/dagre.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/cytoscape-dagre@2.5.0/cytoscape-dagre.min.js"></script>
     <link rel="stylesheet" href="style/test.css">
+	<link rel="icon" href="images/tabicon.png">
     <script src="js/form.js"></script>
     <title>Information</title>
 </head>
