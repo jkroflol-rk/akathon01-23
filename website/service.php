@@ -15,7 +15,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.css">
     <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="style/form.css">
     <script src="js/form.js"></script>
 	<link rel="icon" href="images/tabicon.png">
@@ -52,6 +52,12 @@
         <main>
             <div id="form-container" class="animate__animated animate__fadeInDown">
                 <form action="map.php" method="POST" id="form">
+                    <?php
+                        if (isset($_GET['noti'])) {
+                            $noti = urldecode($_GET['noti']);
+                            echo "<p class='error'>" . $noti . "</p>";
+                        }
+                    ?>
                     <h1>LAN Design</h1>
                     <label for="departments">Enter the number of Departments:</label>
                     <input type="number" name="departments" id="departments" placeholder="Max departments is 5, additional fields will be shown!" max="5" required>

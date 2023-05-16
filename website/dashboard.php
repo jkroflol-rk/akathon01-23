@@ -10,6 +10,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
         <link rel="stylesheet" href="style/animation.css">
 	    <link rel="icon" href="images/tabicon.png">
         <link rel="stylesheet" href="style/form.css">
@@ -54,11 +55,11 @@
 
                             <div class="dashcard ">
                                 <div class="card1st">
-                                    <img src="images/akathonlogo.jpg" alt="edit_photo">
+                                    <img src="images/editprofile.jpg" alt="edit_photo">
         
                                 </div>
                                 <div class="pra pra-content">
-                                    <span>Edit Your Profile</span>
+                                    <span>Edit your profile</span>
         
                                 </div>
                             </div>
@@ -67,10 +68,10 @@
 
                             <div class="dashcard ">
                                 <div class="card1st">
-                                    <img src="images/akathonlogo.jpg" alt="edit_photo">
+                                    <img src="images/input.jpeg" alt="edit_photo">
                                 </div>
                                 <div class="pra pra-content">
-                                    <span>Make An Order</span>
+                                    <span>Input departments and hosts</span>
                                 </div>
                             </div>
                         </a>
@@ -79,7 +80,7 @@
 
                             <div class="dashcard ">
                                 <div class="card1st">
-                                    <img src="images/akathonlogo.jpg" alt="edit_photo">
+                                    <img src="images/gotoconfig.png" alt="edit_photo">
                                 </div>
                                 <div class="pra pra-content">
                                     <span>Go to your config</span>
