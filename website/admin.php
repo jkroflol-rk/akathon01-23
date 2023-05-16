@@ -202,7 +202,8 @@ if (isset($_GET['order_id'])) {
 									<td><?= $d_row->size ?></td>
 									<td><?= $d_row->weight ?></td>
 									<td>
-										<a class="button_two" href="updatedevices.php?device_id=<?= $d_row->id ?>" onclick="return confirm('Are you sure you want to delete this device?')">Delete</a>
+										<a class="button_two" href="updatedevices.php?device_id=<?= $d_row->id ?>" 
+										onclick="return confirm('Are you sure you want to delete this device?\nDevice name: <?= $d_row->name ?>\nID: <?= $d_row->id ?>')">Delete</a>
 									</td>
 								</tr>
 							<?php endforeach; ?>
