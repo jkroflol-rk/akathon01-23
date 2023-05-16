@@ -1362,7 +1362,7 @@ input:-internal-autofill-selected {
 }
 
 .extra-content table,
-td {
+.extra-content td {
   border-bottom: 1px solid green; 
   border-collapse: collapse;
   padding: 7px;
@@ -1424,6 +1424,72 @@ td {
   background: white;
   justify-content: center;
   padding: 60px;
+}
+
+.add_device h2 {
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.add_device table {
+  width: auto;
+  margin: 20px auto;
+}
+
+.add_device th,
+.add_device td {
+  border: 1px solid white;
+  border-collapse: collapse;
+  padding: 10px;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 15px;
+}
+
+.add_device table th {
+  background-color: #404040;
+  color: white;
+}
+
+.add_device table td {
+  background-color: #eeeeee;
+
+}
+
+.add_device img {
+  border: 1px solid #b7b6b6;
+}
+
+.add_device button {
+  font-size: 18px;
+  padding: 8px;
+  text-transform: capitalize;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.button_one {
+  background: rgb(0, 163, 0);
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+}
+
+.button_two {
+  background: #e91e63;
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.bottom {
+  border-bottom: 2px solid #009688;
 }
 
 

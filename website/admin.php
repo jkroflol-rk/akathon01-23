@@ -140,6 +140,62 @@ if (isset($_GET['order_id'])) {
 
 			</div>
 
+			<div class="add_device">
+				<h2>developers rating</h2>
+				<form action="delete.php" method="POST">
+
+					<table>
+						<thead>
+							<tr>
+								<th>ID</th>
+								<th>Name</th>
+								<th>Port</th>
+								<th>Bandwidth</th>
+								<th>Price</th>
+								<th>Size</th>
+								<th>Weight</th>
+								<th>Control</th>
+								<!-- <th>Weight</th> -->
+							</tr>
+						</thead>
+	
+						<tbody>
+							<?php foreach ($d_data->data as $d_row) : ?>
+								<tr>
+
+									<td><?=$d_row->id?></td>
+									<td><?=$d_row->name?></td>
+									<td><?=$d_row->port?></td>
+									<td><?=$d_row->bandwidth?></td>
+									<td><?=$d_row->price?></td>
+									<td><?=$d_row->size?></td>
+									<td><?=$d_row->weight?></td>
+									<td>
+										<input type="submit" value="Delete" class="button_two">
+									</td>
+								</tr>
+							<?php endforeach; ?>
+							<tr>
+								<td><p>Please fill all the field:</p></td>
+								<td><input type="text" name="lastName"></td>
+								<td><input type="email" name="email"></td>
+								<td><input type="email" name="email"></td>
+								<td><input type="email" name="email"></td>
+								<td><input type="email" name="email"></td>
+								<td><input type="email" name="email"></td>
+								<td>
+									<input type="submit" value="Submit" class="button_one">
+								</td>
+							</tr>
+							
+						
+							
+						</tbody>
+					</table>
+				</form>
+			</div>
+
+
 		</main>
 	</div>
 
