@@ -77,11 +77,12 @@ $jsonData = printVlan($read);
             <script>
                 var jsonData = <?php echo $jsonData; ?>; // Assign the JSON data to a JavaScript variable
             </script>
+            <h1 class="texth1">Logical Topology</h1>
             <div id="cy"></div>
             <script src="./js/final.js"></script>
 
             <div class="collapse">
-                <h1>Config:</h1>
+                <h1 class="texth1">Config:</h1>
 			</div>
         </main>
     </div>

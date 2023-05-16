@@ -1048,9 +1048,10 @@ form .input_field {
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .collapse{
   height: fit-content;
-  background: white;
-  width: 100%;
-  padding: 100px;
+  width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px 0;
 }
 
 .collapsible {
@@ -1063,6 +1064,12 @@ form .input_field {
   text-align: left;
   outline: none;
   font-size: 15px;
+
+}
+
+.texth1{
+  text-align: center;
+  color: white;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
@@ -1073,12 +1080,13 @@ form .input_field {
 
 /* Style the collapsible content. Note: hidden by default */
 .content {
-  padding: 0 18px;
+  padding: 0px 18px;
   /* display: none; */
   overflow: hidden;
   background-color: #f1f1f1;
   transition: max-height 0.3s ease-out;
   max-height: 0;
+  font-size: 14px;
 }
 
 .collapsible:after {
@@ -1272,7 +1280,7 @@ input:-internal-autofill-selected {
   position: relative;
   overflow: hidden;
   width: 300px;
-  height: 450px;
+  height: 400px;
 }
 
 .item-box:hover {
@@ -1414,6 +1422,7 @@ td {
   width: 100%;
   height: fit-content;
   background: white;
+  justify-content: center;
 }
 
 

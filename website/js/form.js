@@ -14,7 +14,7 @@ function displayHostsOption(){
 
 				enterhosts.innerHTML += ("<label for='name' " + String(i + 1) + ">Name: "+ "</label>\n <input type='text' name='name[]' class='' placeholder='Name of your department' required>");
 
-				enterhosts.innerHTML += ("<label for='host' " + String(i + 1) + ">Hosts: "+ "</label>\n <input type='number' name='host[]' class='hosts_department' placeholder='Maximum number of hosts per department is 48' max='48' required>");
+				enterhosts.innerHTML += ("<label for='host' " + String(i + 1) + ">Hosts: "+ "</label>\n <input type='number' name='host[]' class='hosts_department' placeholder='Maximum number of hosts per department is 21' max='21' required>");
 				i++;
 			}
 		}else{
@@ -26,8 +26,8 @@ function displayHostsOption(){
 	enterhosts.addEventListener("input", function(){
 		for (var i=0; i < hostsDepartment.length; i++) {
 			hostsDepartment[i].addEventListener("input", function(){
-				if (this.value > 48){
-						this.value = 48;
+				if (this.value > 21){
+						this.value = 21;
 				}
 			});
 		}

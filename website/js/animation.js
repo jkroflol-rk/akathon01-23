@@ -8,7 +8,7 @@ function deleteAnimation(){
 	  
 		  setTimeout(() => {
 			card.remove();
-		  }, 500);
+		  }, 800);
 		});
 	});
 }
