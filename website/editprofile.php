@@ -106,13 +106,13 @@
                                     </div>
 
                                     <div class="input_field">
-                                        <input type="password" name="password" id="password" autocomplete="off" value="">
+                                        <input type="password" name="password" id="password" autocomplete="off" >
                                         <span></span>
                                         <label for="password">Current password:</label>
                                     </div>
                                     
                                     <div class="input_field">
-                                        <input type="password" name="repassword" id="repassword"  autocomplete="off" value="">
+                                        <input type="password" name="repassword" id="repassword"  autocomplete="off" >
                                         <span></span>
                                         <label for="repassword">Retype your new password:</label>
                                     </div>
@@ -132,7 +132,7 @@
                                     </div>
     
                                     <div class="input_field">
-                                        <input type="password" name="newpassword" id="newpassword"  autocomplete="off" value="">
+                                        <input type="password" name="newpassword" id="newpassword"  autocomplete="off" >
                                         <span></span>
                                         <label for="newpassword">New password:</label>
                                     </div>

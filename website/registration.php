@@ -51,6 +51,13 @@ if ((isset($_SESSION['authenticated']) && $_SESSION['authenticated']) || (isset(
             <div class="login_space">
                 <form action="newacc.php" method="POST" class="animate__animated animate__fadeInRight">
                     <div class="loginform registrationform">
+                        <?php
+                            if (isset($_GET['noti'])) {
+                                $noti = urldecode($_GET['noti']);
+                                echo "<p class='error1'>" . $noti . "</p>";
+                            }
+                            
+                        ?>
                         <h1>Registration</h1>
                         <div class="registration_container">
 

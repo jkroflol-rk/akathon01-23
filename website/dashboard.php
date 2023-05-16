@@ -87,6 +87,17 @@
                                 </div>
                             </div>
                         </a>
+                        <a href="deviceinfo.php">
+
+                            <div class="dashcard ">
+                                <div class="card1st">
+                                    <img src="https://www.auvik.com/wp-content/uploads/2021/02/network-devices-router-switch-1-1400x600.jpg" alt="edit_photo">
+                                </div>
+                                <div class="pra pra-content">
+                                    <span>Device Information</span>
+                                </div>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>

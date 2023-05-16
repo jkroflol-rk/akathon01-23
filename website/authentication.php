@@ -39,7 +39,8 @@
       $_SESSION['row'] = $row;
       exit();
     }else{
-      header('Location: login.php');
+      $errorlogin = urlencode("Username or password is incorrect!");
+      header("Location: login.php?errorlog=$errorlogin");
     }
   }
 

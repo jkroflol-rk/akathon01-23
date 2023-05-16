@@ -1,9 +1,7 @@
 .hello_container{
-    display: grid;
-    grid-template-columns: auto auto auto;
-    /* grid-column-gap: 80px; */
-    /* flex-wrap: wrap; */
+    display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     transition: .8s;
   }
   

@@ -86,7 +86,7 @@ if (isset($_GET['order_id'])) {
 							<p class="ordered-time">Ordered Time:
 								<?= $row->order_time ?>
 							</p>
-							<p class="num-vlans">Number of Vlans
+							<p class="num-vlans">Number of Vlans:
 								<?= $row->vlan ?>
 							</p>
 							<p class="num-vlans">Username:
@@ -99,7 +99,7 @@ if (isset($_GET['order_id'])) {
 								<?php
 								$array = $row->vlans;
 								foreach ($array as $dep) {
-									echo "<li>" . $dep->key . ": " . $dep->value . "</li>";
+									echo "<li>Department " . $dep->key . ": " . $dep->value . " hosts</li>";
 								}
 								?>
 							</ul>
@@ -117,59 +117,6 @@ if (isset($_GET['order_id'])) {
 					<?php endforeach; ?>
 
 				</div>
-			</div>
-
-			<div class="device_info">
-				<?php foreach ($d_data->data as $d_row): ?>
-
-					<div class="item-box product-box">
-
-						<img src="<?= $d_row->image ?>" alt="Item image 1">
-						<h2>
-							<?= $d_row->name ?>
-						</h2>
-
-						<div class="extra-content">
-							<table>
-								<tr>
-									<th>Size</th>
-									<td>
-										<?= $d_row->size ?>
-									</td>
-								</tr>
-								<tr>
-									<th>Weight</th>
-									<td>
-										<?= $d_row->weight ?>
-									</td>
-								</tr>
-								<tr>
-									<th>Price</th>
-									<td>
-										<?= $d_row->price ?>
-									</td>
-								</tr>
-								<tr>
-									<th>Port</th>
-									<td>
-										<?= $d_row->port ?>
-									</td>
-								</tr>
-								<tr>
-									<th>Bandwidth</th>
-									<td>
-										<?= $d_row->bandwidth ?>
-									</td>
-								</tr>
-
-							</table>
-							<br>
-							<a href="<?= $d_row->link ?>" target="_blank">More info</a>
-						</div>
-
-					</div>
-				<?php endforeach; ?>
-
 			</div>
 
 			<div class="add_device">
