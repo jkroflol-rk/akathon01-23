@@ -1284,6 +1284,7 @@ input:-internal-autofill-selected {
   overflow: hidden;
   width: 300px;
   height: 400px;
+  margin: 20px;
 }
 
 .item-box:hover {
@@ -1420,13 +1421,26 @@ input:-internal-autofill-selected {
   background-color: rgb(0, 217, 0);
 }
 
-.device_info{
-  display: flex;
+.devicepage{
   width: 100%;
   height: fit-content;
   background: white;
+}
+
+.devicepage h1{
+  text-align: center;
+  margin-top: 0;
+  padding-top: 30px;
+}
+
+.device_info{
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   padding: 60px;
+}
+.device_info h1{
+  display: block;
 }
 
 .add_device h2 {
@@ -1515,6 +1529,20 @@ input:-internal-autofill-selected {
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
+}
+
+.noti{
+  text-align: center;
+  color: rgb(0, 233, 0);
+}
+
+.error{
+  color: orange;
+}
+.error1{
+  color: orange;
+  text-align: center;
+  text-shadow: 1px 1px 1px;
 }
 
 

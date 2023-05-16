@@ -58,6 +58,11 @@ if ((isset($_SESSION['authenticated']) && $_SESSION['authenticated']) || (isset(
                             $noti = urldecode($_GET['noti']);
                             echo "<p class='noti'>" . $noti . "</p>";
                         }
+                        if (isset($_GET['errorlog'])) {
+                            $errorlog = urldecode($_GET['errorlog']);
+                            echo "<p class='error'>" . $errorlog . "</p>";
+                        }
+                        
                         ?>
                         <h1>Login</h1>
                         <form method="post" action="authentication.php">
