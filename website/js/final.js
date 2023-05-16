@@ -98,7 +98,12 @@ function definePort(source, numPort, typePort) {
       octet++;
       counter = 1;
     }
-    portLabel = typePort + "1/" + octet + "/" + counter;
+    if (typePort == "Gi") {
+      portLabel = typePort + "1/" + octet + "/" + counter;
+    } else if (typePort == "fa") {
+      portLabel = typePort + octet + "/" + counter;
+    }
+
     counter++;
     source.switchPorts[portLabel] = false;
   }
