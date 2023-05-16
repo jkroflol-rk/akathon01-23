@@ -32,7 +32,7 @@ function GenerateConfigInput(swtDevice, portDevice, vlanDevice) {
             vlanDevice.forEach(vlanElement => {
                 command_line += "interface g0/0/1." + vlanElement.id.substring(5, vlanElement.id.length) + "\n";
                 command_line += "encapsulation dot1q " + vlanElement.id.substring(5, vlanElement.id.length) + "\n";
-                command_line += "ip address 192.168." + vlanIp + ".1" + " 255.255.255.0\n" ;
+                command_line += "ip address 192.168." + vlanIp + ".1" + " 255.255.255.0\n";
                 vlanIp++;
                 command_line += "exit\n!\n";
             });

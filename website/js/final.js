@@ -109,7 +109,7 @@ we have to collect id of devices between 2 layers.
  */
 for (let i = 0; i < accSwt_num; i++) {
   accessDevice.push(new deviceObject("accessSwt" + i, "Access Switch " + i, "access"));
-  definePort(accessDevice[i], 24, "Gi");
+  definePort(accessDevice[i], 24, "fa");
 }
 for (let i = 0; i < distSwt_num; i++) {
   distDevice.push(new deviceObject("distSwt" + i, "Distribution Switch " + i, "distribution"));
@@ -222,7 +222,7 @@ vlan.forEach((VLAN, index) => {
           if (endPort == "") {
             labelTarget = labelTarget + startPort + ",";
           } else {
-            labelTarget = labelTarget + startPort + "-" + endPort + ",";
+            labelTarget = labelTarget + startPort + "-" + endPort.substring(6, endPort.length) + ",";
           }
           startPort = Object.keys(accessDevice[accdv].switchPorts)[VLAN.port[0].switchport[i + 1]];
           endPort = "";
@@ -353,13 +353,13 @@ for (let i = 0; i < portDevice.length; i++) {
     {
       data: portDevice[i].data, style: portDevice[i].style
     },
-    );
-  };
-  
+  );
+};
+
 var edge = cy.getElementById('router-coreSwt0');
 
 edge.style('sourceLabel', 'Gi0/0/1');
-  
+
 cy.nodes('[layer="core"]').style({
   "background-image": "./images/3650.png",
   "background-fit": "contain",
