@@ -227,7 +227,11 @@ vlan.forEach((VLAN, index) => {
           if (endPort == "") {
             labelTarget = labelTarget + startPort + ",";
           } else {
-            labelTarget = labelTarget + startPort + "-" + endPort.substring(6, endPort.length) + ",";
+            if (endPort.includes("fa") == true) {
+              labelTarget = labelTarget + startPort + "-" + endPort.substring(4, endPort.length) + ",";
+            } else if (endPort.includes("Gi") == true) {
+              labelTarget = labelTarget + startPort + "-" + endPort.substring(6, endPort.length) + ",";
+            }
           }
           startPort = Object.keys(accessDevice[accdv].switchPorts)[VLAN.port[0].switchport[i + 1]];
           endPort = "";
@@ -364,6 +368,8 @@ for (let i = 0; i < portDevice.length; i++) {
 var edge = cy.getElementById('router-coreSwt0');
 
 edge.style('sourceLabel', 'Gi0/0/1');
+
+edge.style("line-style", "solid");
 
 cy.nodes('[layer="core"]').style({
   "background-image": "./images/3650.png",

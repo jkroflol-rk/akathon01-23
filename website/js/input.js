@@ -5,10 +5,10 @@ class configGenerate {
     }
 }
 var deviceConfig = [];
+deviceIp = 2;
+vlanIp = 2;
 function GenerateConfigInput(swtDevice, portDevice, vlanDevice) {
     command_line = "";
-    deviceIp = 2;
-    vlanIp = 2;
     swtDevice.forEach(element => {
         var hostname = element.data.id;
         command_line = "hostname " + hostname + "\n!\n";
@@ -17,9 +17,9 @@ function GenerateConfigInput(swtDevice, portDevice, vlanDevice) {
             command_line += "ip default-gateway 192.168.1.1\n!\n"
             command_line += "interface vlan1\n";
             command_line += "ip address 192.168.1." + deviceIp + " 255.255.255.0\nno shut\n!\n";
-
+            deviceIp++;
         }
-        deviceIp++;
+
         vlanDevice.forEach(elementvlan => {
             if (hostname.includes("Swt") == true) {
                 var vlan_name = elementvlan.name;
@@ -47,6 +47,10 @@ function GenerateConfigInput(swtDevice, portDevice, vlanDevice) {
                     var switchport = "access ";
                     command_line += "switchport mode " + switchport + "\n";
                     command_line += "switchport access " + portElement.data.target + "\n!\n";
+                }
+                if ((portElement.data.source.includes("router") == true) && (hostname.includes("core") == true)) {
+                    command_line += "interface range " + portElement.style.sourceLabel + "\n";
+                    command_line += "switchport mode trunk \n!\n";
                 }
             });
         }
