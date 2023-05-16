@@ -16,7 +16,7 @@ function GenerateConfigInput(swtDevice, portDevice, vlanDevice) {
         if (element.data.id.includes("Swt") == true) {
             command_line += "ip default-gateway 192.168.1.1\n!\n"
             command_line += "interface vlan1\n";
-            command_line += "ip address 192.168.1." + deviceIp + " 255.255.255.0\n!\n";
+            command_line += "ip address 192.168.1." + deviceIp + " 255.255.255.0\nno shut\n!\n";
 
         }
         deviceIp++;
@@ -28,10 +28,11 @@ function GenerateConfigInput(swtDevice, portDevice, vlanDevice) {
             }
         });
         if (hostname.includes("router") == true) {
+            command_line += "interface g0/0/1\n" + "encapsulation dot1q 1\n" + "ip address 192.168.1.1 255.255.255.0\n" + "no shut" + "\n!\n";
             vlanDevice.forEach(vlanElement => {
-                command_line += "interface g0/0/1." + vlanElement.id.substring(4, vlanElement.id.length) + "\n";
-                command_line += "encapsulation dot1q " + vlanElement.id.substring(4, vlanElement.id.length) + "\n";
-                command_line += "ip address 192.168." + vlanIp + ".1" + "\n";
+                command_line += "interface g0/0/1." + vlanElement.id.substring(5, vlanElement.id.length) + "\n";
+                command_line += "encapsulation dot1q " + vlanElement.id.substring(5, vlanElement.id.length) + "\n";
+                command_line += "ip address 192.168." + vlanIp + ".1" + " 255.255.255.0\n" ;
                 vlanIp++;
                 command_line += "exit\n!\n";
             });
@@ -58,7 +59,6 @@ command_router = GenerateConfigInput(router, portDevice, vlan);
 command_coreSwt = GenerateConfigInput(coreDevice, portDevice, vlan);
 command_distSwt = GenerateConfigInput(distDevice, portDevice, vlan);
 command_access = GenerateConfigInput(accessDevice, portDevice, vlan);
-// var box = document.body.childNodes[1].childNodes[2].childNodes[4];
 var box = document.body.querySelector('.collapse');
 console.log(box);
 deviceConfig.forEach(command_config => {

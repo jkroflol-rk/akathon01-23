@@ -25,182 +25,49 @@ class portObject {
   }
 }
 
-// var vlan = [
-//   {
-//     id: "Management",
-//     host: 18,
-//     port: [
-//       {
-//         switch: "",
-//         switchport: []
-//       }
-//     ]
-//   },
-//   {
-//     id: "IT",
-//     host: 20,
-//     port: [
-//       {
-//         switch: "",
-//         switchport: []
-//       }
-//     ]
-//   },
-//   {
-//     id: "Student",
-//     host: 30,
-//     port: [
-//       {
-//         switch: "",
-//         switchport: []
-//       }
-//     ]
-//   },
-//   {
-//     id: "Teacher",
-//     host: 32,
-//     port: [
-//       {
-//         switch: "",
-//         switchport: []
-//       }
-//     ]
-//   },
-//   {
-//     id: "CSGO",
-//     host: 25,
-//     port: [
-//       {
-//         switch: "",
-//         switchport: []
-//       }
-//     ]
-//   },
-//   {
-//     id: "Cum Thanh",
-//     host: 40,
-//     port: [
-//       {
-//         switch: "",
-//         switchport: []
-//       }
-//     ]
-//   },
-// ];
 var vlan = jsonData;
 console.log(vlan);
-// var vlan = [
-//   {
-//     "id": "Management", "host": 63, "port": [{
-//       "switch": "", "switchport": []
-//     }
-//     ]
-//   },
-//   {
-//     "id": "IT",
-//     "host": 47,
-//     "port": [
-//       {
-//         "switch": "",
-//         "switchport": []
-//       }
-//     ]
-//   },
-//   {
-//     "id": "Student",
-//     "host": 70,
-//     "port": [
-//       {
-//         "switch": "",
-//         "switchport": []
-//       }
-//     ]
-//   },
-//   {
-//     "id": "Teacher",
-//     "host": 19,
-//     "port": [
-//       {
-//         "switch": "",
-//         "switchport": []
-//       }
-//     ]
-//   },
-//   {
-//     "id": "CSGO",
-//     "host": 43,
-//     "port": [
-//       {
-//         "switch": "",
-//         "switchport": []
-//       }
-//     ]
-//   },
-//   {
-//     "id": "Cum Thanh",
-//     "host": 27,
-//     "port": [
-//       {
-//         "switch": "",
-//         "switchport": []
-//       }
-//     ]
-//   },
-//   {
-//     "id": "Marketing",
-//     "host": 86,
-//     "port": [
-//       {
-//         "switch": "",
-//         "switchport": []
-//       }
-//     ]
-//   }
-// ];
-
 
 /*Step 1: Calculate switches of each layers from input vlan, assign port for switches */
 
 var swt_num = 0;
 var sum_host = 0;
+var numCount = 10;
 vlan.forEach((value, index) => {
-  sum_host += value.host;                       // Calculate total host to determine further access switches number
+  sum_host += value.host;
+  value.id = "vlan " + numCount.toString();
+  numCount++;
 });
 
 console.log("Sum host: ", sum_host);
-accSwt_num = Math.ceil((sum_host + 48) / 48);   // Each access switch has 48 ports
+accSwt_num = Math.ceil((sum_host + 24) / 24);
 console.log("access switches: ", accSwt_num);
-distSwt_num = Math.ceil(accSwt_num / 2);        // distribution switch number = Access switches / 2
-console.log("dist switches: ", distSwt_num);
+distSwt_num = Math.ceil(accSwt_num / 2);   // distribution switch number
+console.log("dist swithces: ", distSwt_num);
 
-
-var port_require = sum_host + distSwt_num * accSwt_num;   //
-var port_have = accSwt_num * (48 - distSwt_num);
-
-if (port_have - port_require > 48) {
+var port_require = sum_host + distSwt_num * accSwt_num;
+var port_have = accSwt_num * 24;
+if (port_have - port_require > 24) {
   accSwt_num -= 1;
   distSwt_num = Math.ceil(accSwt_num / 2);
 }
-
 console.log("port require: ", port_require);
 console.log("port have: ", port_have);
 
-/* Separate "big" vlan into small ones, each vlan have host = avaiable ports in 1 switch after minus ports for upper layer. */
-
 for (var i = 0; i < vlan.length; i++) {
-  // Check if the host count is more than 48
-  if (vlan[i].host > (48 - distSwt_num)) {
+  // Check if the host count is more than 24
+  if (vlan[i].host > (24 - distSwt_num)) {
     // Calculate the number of new VLANs needed to accommodate all hosts
-    var numNewVlans = Math.ceil(vlan[i].host / (48 - distSwt_num));
+    var numNewVlans = Math.ceil(vlan[i].host / (24 - distSwt_num));
     // Create new VLAN objects with 24 hosts each
     for (var j = 1; j <= numNewVlans; j++) {
       // Calculate the number of hosts for this new VLAN
-      var newHostCount = Math.min(vlan[i].host - ((j - 1) * (48 - distSwt_num)), (48 - distSwt_num));
+      var newHostCount = Math.min(vlan[i].host - ((j - 1) * (24 - distSwt_num)), (24 - distSwt_num));
       // Create the new VLAN object and add it to the array
       vlan.push({
-        id: vlan[i].id + " " + String(j),
+        id: vlan[i].id,
         host: newHostCount,
-        port: [
+        name: vlan[i].name, port: [
           {
             switch: "",
             switchport: []
@@ -213,57 +80,55 @@ for (var i = 0; i < vlan.length; i++) {
     i--;
   }
 }
-
-/*----------------------------------------------------------------------------------------------------------------------*/
-
-vlan = vlan.sort((obj1, obj2) => obj2.host - obj1.host);  // Sort vlan from largest to smallest.
+vlan = vlan.sort((obj1, obj2) => obj2.host - obj1.host);
 console.log(vlan)
-var coreSwt_num = Math.ceil(distSwt_num / 3);   //Calculate number of core switch.
+
+var coreSwt_num = Math.ceil(distSwt_num / 3); //Calculate number of core switch
 var coreDevice = [];
 var distDevice = [];
 var accessDevice = [];
 var router = [];
 
-/* Define ports for switch */
 function definePort(source, numPort, typePort) {
   counter = 1;
   octet = 0;
-  for (let i = 1; i <= numPort; i++) // The number depend on number of ports which is fetched from database.100px
+  for (let i = 1; i <= numPort; i++) // The number depend on number of ports which is fetched from database
   {
     if (counter > 24) {
       octet++;
       counter = 1;
     }
-    portLabel = typePort + "1/" + octet + "/" + counter;  // Each 24 ports increase octet by 1. Example 0/0/24 -> 1/0/1.
+    portLabel = typePort + "1/" + octet + "/" + counter;
     counter++;
     source.switchPorts[portLabel] = false;
-    /* Output should be Gi0/0/1 */ 
   }
 }
 /*
-Loop to assign port to each vlan
+Define Switch by layer in devices variable, switches must be defined before calculate port since 
+we have to collect id of devices between 2 layers.
  */
 for (let i = 0; i < accSwt_num; i++) {
   accessDevice.push(new deviceObject("accessSwt" + i, "Access Switch " + i, "access"));
-  definePort(accessDevice[i], 48, "Gi");
+  definePort(accessDevice[i], 24, "Gi");
 }
 for (let i = 0; i < distSwt_num; i++) {
   distDevice.push(new deviceObject("distSwt" + i, "Distribution Switch " + i, "distribution"));
-  definePort(distDevice[i], 48, "Gi");
+  definePort(distDevice[i], 24, "Gi");
 }
 for (let i = 0; i < coreSwt_num; i++) {
   coreDevice.push(new deviceObject("coreSwt" + i, "Core Switch " + i, "core"));
-  definePort(coreDevice[i], 48, "Gi");
+  definePort(coreDevice[i], 24, "Gi");
 }
 router.push(new deviceObject("router", "Router", "router"));
 definePort(router[0], 2, "Gi");
-/*-----------------------------------------------------*
+/*-----------------------------------------------------*/
 
-/*Step 2: Create array of ports and devices */
+
+
 /* 
 We prioritize upper layer than lower, so connection from upper layer is priority, then we work from core layer to distribution layer first 
-First connect ports from core to dist
 */
+
 var portDevice = [];
 for (let rt in router) {
   for (let core in coreDevice) {
@@ -282,7 +147,6 @@ for (let rt in router) {
     }
   }
 }
-
 for (let core in coreDevice) {
   for (let dist in distDevice) {
     for (let portSource in coreDevice[core].switchPorts) {
@@ -300,8 +164,7 @@ for (let core in coreDevice) {
     }
   }
 }
-/*---------------------------------------------------------------------------------------------------------------- */
-// Then connect ports from dist to access
+
 for (let dist in distDevice) {
   for (let access in accessDevice) {
     for (let portSource in distDevice[dist].switchPorts) {
@@ -319,18 +182,18 @@ for (let dist in distDevice) {
     }
   }
 }
-// Then connect ports from access to vlan
+
 vlan.forEach((VLAN) => {
   check = false;
   for (let access in accessDevice) {
-    if (VLAN.host <= 48 - accessDevice[access].connected) { // Check if avaiable ports > host
+    if (VLAN.host <= 24 - accessDevice[access].connected) {
       for (let i = 0; i < VLAN.host; i++) {
         for (let port in accessDevice[access].switchPorts) {
           if (accessDevice[access].switchPorts[port] == false) {
             console.log(accessDevice[access].data.id);
             VLAN.port[0].switch = String(accessDevice[access].data.id);
             portIndex = Object.keys(accessDevice[access].switchPorts).indexOf(port);
-            VLAN.port[0].switchport.push(portIndex); // Save index of port in switch to get Label after
+            VLAN.port[0].switchport.push(portIndex);
             accessDevice[access].switchPorts[port] = true;
             accessDevice[access].connected++;
             break;
@@ -344,34 +207,34 @@ vlan.forEach((VLAN) => {
     }
   }
 });
-/*--------------------------------------------------------------------------- */
 
-/*Save Label for CYTOSCAPE, get port Label from index saved in vlan variable */
-vlan.forEach((VLAN) => {
+vlan.forEach((VLAN, index) => {
   var labelTarget = "";
   var startPort = "";
   var endPort = "";
   for (let accdv in accessDevice) {
     if (VLAN.port[0].switch == accessDevice[accdv].data.id) {
       startPort = Object.keys(accessDevice[accdv].switchPorts)[VLAN.port[0].switchport[0]];
-      for (let i = 0; i < VLAN.port[0].switchport.length; i++) {  
+      for (let i = 0; i < VLAN.port[0].switchport.length; i++) {
         if (VLAN.port[0].switchport[i] + 1 == VLAN.port[0].switchport[i + 1]) {
-          endPort = Object.keys(accessDevice[accdv].switchPorts)[VLAN.port[0].switchport[i + 1]]; // If nextport = currentport + 1, for example nextport index  = 2 and current port index = 1, save endpoint = nextport
-        } else { // if not 
-          if (endPort == "") { // if endport = null -> add "," such as [1 -> startport,4,5,6,7]
-            labelTarget = labelTarget + startPort + ","; 
-          } else {  // if endport != null -> get range port such as [1,2,3,6,7] -> 1 startport, 3 endport, 6 startport, 7 endport
+          endPort = Object.keys(accessDevice[accdv].switchPorts)[VLAN.port[0].switchport[i + 1]];
+        } else {
+          if (endPort == "") {
+            labelTarget = labelTarget + startPort + ",";
+          } else {
             labelTarget = labelTarget + startPort + "-" + endPort + ",";
           }
           startPort = Object.keys(accessDevice[accdv].switchPorts)[VLAN.port[0].switchport[i + 1]];
           endPort = "";
         }
       }
+
+      labelTarget = labelTarget.substring(0, labelTarget.length - 1);
+
       portDevice.push(new portObject(accessDevice[accdv].data, VLAN, labelTarget, "Ethernet"));
     }
   }
 })
-
 console.log(vlan)
 console.log(accessDevice);
 console.log(portDevice);

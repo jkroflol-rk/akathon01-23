@@ -74,6 +74,7 @@ $jsonData = printVlan($read);
         </header>
 
         <main>
+            <p><?php echo $jsonData; ?></p>
             <script>
                 var jsonData = <?php echo $jsonData; ?>; // Assign the JSON data to a JavaScript variable
             </script>

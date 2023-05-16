@@ -172,8 +172,9 @@ function printVlan($input)
     foreach ($vlans as $vlan) {
         // Create a new VLAN object with the specified ID and host
         $vlanObj = array(
-            "id" => $vlan["key"],
+            "id" => "",
             "host" => $vlan["value"],
+            "name" => $vlan["key"],
             "port" => array(
                 array(
                     "switch" => "",
