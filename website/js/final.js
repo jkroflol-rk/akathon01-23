@@ -227,7 +227,11 @@ vlan.forEach((VLAN, index) => {
           if (endPort == "") {
             labelTarget = labelTarget + startPort + ",";
           } else {
-            labelTarget = labelTarget + startPort + "-" + endPort.substring(6, endPort.length) + ",";
+            if (endPort.includes("fa") == true) {
+              labelTarget = labelTarget + startPort + "-" + endPort.substring(4, endPort.length) + ",";
+            } else if (endPort.includes("Gi") == true) {
+              labelTarget = labelTarget + startPort + "-" + endPort.substring(6, endPort.length) + ",";
+            }
           }
           startPort = Object.keys(accessDevice[accdv].switchPorts)[VLAN.port[0].switchport[i + 1]];
           endPort = "";
