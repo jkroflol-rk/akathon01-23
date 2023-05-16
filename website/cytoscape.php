@@ -8,8 +8,6 @@ if ((isset($_SESSION['authenticated']) && $_SESSION['authenticated']) || (isset(
 include('./conn/func.php');
 
 $data = getData("users");
-$read = json_decode("users");
-echo $read;
 
 $temp_id = $_SESSION['userid'];
 $vlan = null;
@@ -20,6 +18,14 @@ foreach ($data->data as $row) {
         break; // Exit the loop since the ID is found
     }
 }
+
+if (empty($vlan)) {
+    $err = "Please input the number of departments and hosts before viewing your config!";
+    $encodederr = urlencode($err);
+    header("Location: ./service.php?noti=$encodederr");
+    exit; // Add an exit statement after the header redirect
+}
+
 $jsonData = printVlan($read);
 ?>
 <!DOCTYPE html>
@@ -35,6 +41,7 @@ $jsonData = printVlan($read);
     <script src="https://unpkg.com/cytoscape@3.24.0/dist/cytoscape.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dagre/0.8.5/dagre.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/cytoscape-dagre@2.5.0/cytoscape-dagre.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="style/test.css">
 	<link rel="icon" href="images/tabicon.png">
     <script src="js/form.js"></script>
@@ -75,7 +82,6 @@ $jsonData = printVlan($read);
         </header>
 
         <main>
-            <p><?php echo $jsonData; ?></p>
             <script>
                 var jsonData = <?php echo $jsonData; ?>; // Assign the JSON data to a JavaScript variable
             </script>

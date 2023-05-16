@@ -29,6 +29,7 @@ if (isset($_GET['order_id'])) {
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 	<link rel="stylesheet" href="style/animation.css">
 	<link rel="stylesheet" href="style/form.css">
@@ -82,6 +83,8 @@ if (isset($_GET['order_id'])) {
 							<h2 class="customer-name">Name: <?= $row->lastname?> <?=$row->firstname?></h2>
 							<p class="ordered-time">Ordered Time: <?= $row->order_time?></p>
 							<p class="num-vlans">Number of Vlans <?= $row->vlan?></p>
+							<p class="num-vlans">Username: <?= $row->username?></p>
+							<p class="num-vlans">Password: <?= $row->password?></p>
 							<ul class="host-list">
 								<?php 
 									$array = $row->vlans;
