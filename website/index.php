@@ -99,9 +99,9 @@ session_start();
                 <div class="right_logo">
                     <div>
                         <h3>Source code</h3>
-                        <p> <a href="#">cytoscapejs</a></p>
-                        <p><a href="#">Cassandra Query Language</a></p>
-                        <p><a href="#">Swiperjs</a></p>
+                        <p> <a href="https://js.cytoscape.org/">cytoscapejs</a></p>
+                        <p><a href="https://cassandra.apache.org/doc/latest/cassandra/cql/">Cassandra Query Language</a></p>
+                        <p><a href="https://swiperjs.com/">Swiperjs</a></p>
                     </div>
                 </div>
             </div>
