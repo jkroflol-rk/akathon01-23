@@ -24,7 +24,13 @@ Contest: Swinburne Akathon Semester Jan 2023
 
 ## Installation
 
-<Installation here>
-
+- Download the full code
+- Download XAMPP: https://www.apachefriends.org/download.html
+- Install XAMPP, choose default options for installation (remember the folder where you install it, will be important later!)
+- Open the folder xampp (where you install XAMPP)
+- Go to folder 'htdocs'
+- Unzip the code inside that folder
+- Open XAMPP Control Panel, Start Apache
+- Go to your browser, type "localhost/akathon01-23" (replace akathon01-23 by the folder contains the file)
 
 
