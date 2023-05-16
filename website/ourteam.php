@@ -69,19 +69,13 @@ session_start();
 					<div class="our_vision">
 						<div class="our_vision_title">
 							<h2>Our vision</h2>
-							<p>We aim to create</p>
+							<p>We aim to create networking solutions remotely by combining web development, database usage and IoT knowlege.</p>
 
 						</div>
 						<div class="our_vision_content">
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem sint eum delectus
-								minus architecto ipsam sed laboriosam fuga, rerum, ea accusantium tempora doloribus
-								facere perspiciatis assumenda vel laborum cumque nobis.</p>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem sint eum delectus
-								minus architecto ipsam sed laboriosam fuga, rerum, ea accusantium tempora doloribus
-								facere perspiciatis assumenda vel laborum cumque nobis.</p>
-							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem sint eum delectus
-								minus architecto ipsam sed laboriosam fuga, rerum, ea accusantium tempora doloribus
-								facere perspiciatis assumenda vel laborum cumque nobis.</p>
+							<p>Our group was formed on February 2023 for the subject TNE10006: Network and Switching.</p>
+							<p>We pride ourselves on our background knowlege, diverse areas of expertise for each member and the ability to improvise on any situation. That is why we enter this competetiion, hoping to make changes and success.</p>
+							<p>On 5th Match 2023 Dr. Pham Van Dai take us under is direct tutorlege so that we could learn and master our networking skills as well as professional work ethic and behaviours.</p>
 
 						</div>
 					</div>

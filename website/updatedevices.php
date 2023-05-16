@@ -22,13 +22,13 @@ if (
 	];
 	$showndata =  postData("devices", $ndata);
 	echo $showndata;
-	header('Location: ./admin.php');
+	header('Location: ./admin.php#scroll');
 } 
 
 if (isset($_GET['device_id'])) {
 	$deleteid = $_GET['device_id'];
 	$delete = deleteData("devices", $deleteid);
     echo $delete;
-	header('Location: ./admin.php');
+	header('Location: ./admin.php#scroll');
 }
 ?>

@@ -102,6 +102,8 @@ session_start();
                         <p> <a href="https://js.cytoscape.org/">cytoscapejs</a></p>
                         <p><a href="https://cassandra.apache.org/doc/latest/cassandra/cql/">Cassandra Query Language</a></p>
                         <p><a href="https://swiperjs.com/">Swiperjs</a></p>
+                        <p><a href="https://animate.style/">AnimateCSS</a></p>
+                        <p><a>HTML, CSS, Javascript, PHP<a></p>
                     </div>
                 </div>
             </div>
@@ -119,7 +121,7 @@ session_start();
 
                     <div class="logo_image">
                         <img src="images/akathonlogo.jpg" alt="akathonlogo">
-                        <p>Project made for this competition</p>
+                        <p>This project was made for Akathon</p>
                     </div>
 
                 </div>
