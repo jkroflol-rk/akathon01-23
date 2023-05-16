@@ -14,11 +14,10 @@ function GenerateConfigInput(swtDevice, portDevice, vlanDevice) {
         command_line = "hostname " + hostname + "\n!\n";
         command_line += "no ip domain-lookup \n!\n";
         if (element.data.id.includes("Swt") == true) {
-            deviceIp++;
             command_line += "ip default-gateway 192.168.1.1\n!\n"
             command_line += "interface vlan1\n";
             command_line += "ip address 192.168.1." + deviceIp + " 255.255.255.0\nno shut\n!\n";
-
+            deviceIp++;
         }
 
         vlanDevice.forEach(elementvlan => {
