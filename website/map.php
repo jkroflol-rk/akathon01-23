@@ -30,5 +30,5 @@ $op = convertVlan($rdata);
 
 echo $op;
 
-header('Location: ./cryptoscam.php');
+header('Location: ./cytoscape.php');
 ?>

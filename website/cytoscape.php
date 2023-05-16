@@ -79,13 +79,21 @@ $jsonData = printVlan($read);
             </script>
             <div id="cy"></div>
             <script src="./js/final.js"></script>
+
+            <div class="collapse">
+                <h1>Config:</h1>
+			</div>
         </main>
     </div>
 
+    <script src="js/animation.js"></script>
+    <script src="js/input.js"></script>
+    
     <footer>
         <p>Dang Nam Khanh, Le Xuan Nhat, Duong Quang Thanh</p>
         <p>Copyright &copy; 2023 TNE:GO. All rights Reserved</p>
     </footer>
+
 </body>
 
 </html>

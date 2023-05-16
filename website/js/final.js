@@ -222,6 +222,7 @@ var coreSwt_num = Math.ceil(distSwt_num / 3);   //Calculate number of core switc
 var coreDevice = [];
 var distDevice = [];
 var accessDevice = [];
+var router = [];
 
 /* Define ports for switch */
 function definePort(source, numPort, typePort) {
@@ -254,6 +255,8 @@ for (let i = 0; i < coreSwt_num; i++) {
   coreDevice.push(new deviceObject("coreSwt" + i, "Core Switch " + i, "core"));
   definePort(coreDevice[i], 48, "Gi");
 }
+router.push(new deviceObject("router", "Router", "router"));
+definePort(router[0], 2, "Gi");
 /*-----------------------------------------------------*
 
 /*Step 2: Create array of ports and devices */
@@ -262,6 +265,24 @@ We prioritize upper layer than lower, so connection from upper layer is priority
 First connect ports from core to dist
 */
 var portDevice = [];
+for (let rt in router) {
+  for (let core in coreDevice) {
+    for (let portSource in router[rt].switchPorts) {
+      if (router[rt].switchPorts[portSource] == false) {
+        portTarget = Object.keys(coreDevice[core].switchPorts)[Object.keys(router[rt].switchPorts).indexOf(portSource)];
+        if (coreDevice[core].switchPorts[portTarget] == false) {
+          portDevice.push(new portObject(router[rt].data, coreDevice[core].data, portSource, portTarget));
+          router[rt].switchPorts[portSource] = true;
+          router[rt].connected++;
+          coreDevice[core].switchPorts[portTarget] = true;
+          coreDevice[core].connected++;
+          break;
+        }
+      }
+    }
+  }
+}
+
 for (let core in coreDevice) {
   for (let dist in distDevice) {
     for (let portSource in coreDevice[core].switchPorts) {
@@ -428,7 +449,7 @@ vlan.forEach(VLAN => {
   })
 });
 
-cy.add([{ data: { id: "router", label: "Router" } }]);
+cy.add([{ data: router[0].data }]);
 
 for (let i = 0; i < coreDevice.length; i++) {
   cy.add({
@@ -448,29 +469,34 @@ for (let i = 0; i < accessDevice.length; i++) {
   });
 };
 
-cy.nodes('[layer="core"]').forEach(function (core) {
-  cy.add({
-    data: {
-      id: core.id() + "-" + "router", // unique id for the edge
-      source: "router", // set the source to the id of the "Router" node
-      target: core.id(), // set the target to the id of the current core node
-    },
-    style: {
-      "line-style": "solid",
-      "sourceLabel": "G0/0/1",
-      "targetLabel": "G1/0/11",
-    }
-  });
-});
+// cy.nodes('[layer="core"]').forEach(function (core) {
+//   cy.add({
+//     data: {
+//       id: core.id() + "-" + "router", // unique id for the edge
+//       source: "router", // set the source to the id of the "Router" node
+//       target: core.id(), // set the target to the id of the current core node
+//     },
+//     style: {
+//       "line-style": "solid",
+//       "sourceLabel": "G0/0/1",
+//       "targetLabel": "G1/0/11",
+//     }
+//   });
+// });
+
 
 for (let i = 0; i < portDevice.length; i++) {
   cy.add(
     {
       data: portDevice[i].data, style: portDevice[i].style
     },
-  );
-};
+    );
+  };
+  
+var edge = cy.getElementById('router-coreSwt0');
 
+edge.style('sourceLabel', 'Gi0/0/1');
+  
 cy.nodes('[layer="core"]').style({
   "background-image": "./images/3650.png",
   "background-fit": "contain",

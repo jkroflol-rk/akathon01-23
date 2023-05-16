@@ -97,11 +97,6 @@ if (isset($_GET['order_id'])) {
 
 				</div>
 			</div>
-			<div class="collapse">
-
-				
-				
-			</div>
 
 			<div class="device_info">
 
@@ -214,10 +209,6 @@ if (isset($_GET['order_id'])) {
 		<p>Dang Nam Khanh, Le Xuan Nhat, Duong Quang Thanh</p>
 		<p>Copyright &copy; 2023 TNE:GO. All rights Reserved</p>
 	</footer>
-
-	<script src="js/animation.js"></script>
-	<script src="js/djtmeakathon.js"></script>
-	<script src="js/input.js"></script>
 
 </body>
 

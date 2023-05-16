@@ -58,7 +58,8 @@ command_router = GenerateConfigInput(router, portDevice, vlan);
 command_coreSwt = GenerateConfigInput(coreDevice, portDevice, vlan);
 command_distSwt = GenerateConfigInput(distDevice, portDevice, vlan);
 command_access = GenerateConfigInput(accessDevice, portDevice, vlan);
-var box = document.body.childNodes[1].childNodes[3].childNodes[3];
+// var box = document.body.childNodes[1].childNodes[2].childNodes[4];
+var box = document.body.querySelector('.collapse');
 console.log(box);
 deviceConfig.forEach(command_config => {
     var button = document.createElement('button');
