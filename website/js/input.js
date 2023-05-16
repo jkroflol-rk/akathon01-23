@@ -36,12 +36,6 @@ function GenerateConfigInput(swtDevice, portDevice, vlanDevice) {
                 vlanIp++;
                 command_line += "exit\n!\n";
             });
-            portDevice.forEach(portElement => {
-                if ((portElement.data.source == hostname) && (portElement.data.target.includes("Swt") == false)) {
-                    command_line += "interface range " + portElement.style.sourceLabel + "\n";
-                    command_line += "switchport mode trunk \n!\n";
-                }
-            });
         }
         if (hostname.includes("Swt") == true) {
             portDevice.forEach(portElement => {
@@ -53,6 +47,10 @@ function GenerateConfigInput(swtDevice, portDevice, vlanDevice) {
                     var switchport = "access ";
                     command_line += "switchport mode " + switchport + "\n";
                     command_line += "switchport access " + portElement.data.target + "\n!\n";
+                }
+                if ((portElement.data.source.includes("router") == true)) {
+                    command_line += "interface range " + portElement.style.sourceLabel + "\n";
+                    command_line += "switchport mode trunk \n!\n";
                 }
             });
         }
