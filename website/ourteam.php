@@ -54,7 +54,7 @@ session_start();
 					<h1>About <span>TNE:GO</span> Team</h1>
 					<p>Transform your office with ease and affordability with our professional network setup services -
 						exceptional quality, unbeatable prices.</p>
-					<p><a href="#team_comp" class="introbutton">Explore</a></p>
+					<a href="#team_comp" class="introbutton">Explore</a>
 				</div>
 			</div>
 

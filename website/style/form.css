@@ -839,6 +839,8 @@ form .input_field {
 .introduction_content p{
   line-height: 30px;
   color: black;
+  text-shadow: yellow 1px 2px 2px;
+  font-weight: bold;
 }
 
 .introbutton {
