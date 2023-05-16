@@ -1537,7 +1537,7 @@ input:-internal-autofill-selected {
 }
 
 .error{
-  color: red;
+  color: orange;
 }
 .error1{
   color: orange;
