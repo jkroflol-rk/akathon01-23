@@ -120,7 +120,7 @@ if (isset($_GET['order_id'])) {
 			</div>
 
 			<div class="add_device">
-				<h2>Devices</h2>
+				<h2 id="scroll">Devices</h2>
 
 					<table>
 						<thead>
