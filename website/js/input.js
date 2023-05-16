@@ -48,7 +48,7 @@ function GenerateConfigInput(swtDevice, portDevice, vlanDevice) {
                     command_line += "switchport mode " + switchport + "\n";
                     command_line += "switchport access " + portElement.data.target + "\n!\n";
                 }
-                if ((portElement.data.source.includes("router") == true)) {
+                if ((portElement.data.source.includes("router") == true) && (hostname.includes("core") == true)) {
                     command_line += "interface range " + portElement.style.sourceLabel + "\n";
                     command_line += "switchport mode trunk \n!\n";
                 }

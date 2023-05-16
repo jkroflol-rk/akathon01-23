@@ -369,6 +369,8 @@ var edge = cy.getElementById('router-coreSwt0');
 
 edge.style('sourceLabel', 'Gi0/0/1');
 
+edge.style("line-style", "solid");
+
 cy.nodes('[layer="core"]').style({
   "background-image": "./images/3650.png",
   "background-fit": "contain",
