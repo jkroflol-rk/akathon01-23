@@ -5,10 +5,10 @@ class configGenerate {
     }
 }
 var deviceConfig = [];
+deviceIp = 2;
+vlanIp = 2;
 function GenerateConfigInput(swtDevice, portDevice, vlanDevice) {
     command_line = "";
-    deviceIp = 2;
-    vlanIp = 2;
     swtDevice.forEach(element => {
         var hostname = element.data.id;
         command_line = "hostname " + hostname + "\n!\n";
