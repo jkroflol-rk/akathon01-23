@@ -8,8 +8,8 @@
   }
   
   .hello{
-    width: 360px;
-    height:370px;
+    /* width: 360px;
+    height:370px; */
     background-color: green;
     border: 3px solid wheat;
     border-radius: 20%;

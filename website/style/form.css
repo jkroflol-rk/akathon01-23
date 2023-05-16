@@ -1153,7 +1153,8 @@ form .input_field {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  width: 400px;
+  width: 300px;
+  min-height: 400px;
   margin: 20px;
   display: flex;
   flex-direction: column;
@@ -1491,6 +1492,15 @@ input:-internal-autofill-selected {
 
 .bottom {
   border-bottom: 2px solid #009688;
+}
+
+.test_btn{
+  padding: 10px;
+  background: black;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  margin-top: 10px;
 }
 
 
