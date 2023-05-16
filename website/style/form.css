@@ -1107,7 +1107,7 @@ form .input_field {
 .topology{
   width: 100%;
   height: fit-content;
-  background: rgba(255, 255, 255, 0.726);
+  background: rgba(255, 255, 255, 0.863);
 }
 
 .topology h1{
@@ -1120,8 +1120,12 @@ form .input_field {
 .order-card {
   background-color: #f2f2f2;
   border-radius: 10px;
-  padding: 20px;
+  padding: 20px 20px 20px 25px;
   /* width: 300px; */
+}
+
+.order-card ul{
+  margin-left: 30px;
 }
 
 .order-card ul li{
@@ -1152,26 +1156,23 @@ form .input_field {
   background-color: #f2f2f2;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  width: 300px;
-  min-height: 400px;
+  min-width: 300px;
+  min-height: 450px;
   margin: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .customer-name {
   font-size: 24px;
   margin-top: 0;
   font-weight: bold;
-  text-align: center;
 }
 
 .ordered-time, .num-vlans {
   margin: 10px 0;
   font-size: 16px;
-  text-align: center;
 }
 
 .host-list {
@@ -1431,6 +1432,7 @@ input:-internal-autofill-selected {
 .add_device h2 {
   text-transform: capitalize;
   text-align: center;
+  color: white;
 }
 
 .add_device table {
@@ -1480,14 +1482,23 @@ input:-internal-autofill-selected {
   color: white;
   padding: 5px;
   text-decoration: none;
+  transition: .2s;
 }
 
+.button_one:hover {
+  box-shadow: 0px 0px 2px 2px black;
+}
+.button_two:hover {
+  box-shadow: 0px 0px 2px 2px black;
+
+}
 .button_two {
   background: #e91e63;
   color: white;
   padding: 5px;
   text-decoration: none;
   border-radius: 5px;
+  transition: .2s;
 }
 
 .bottom {
@@ -1501,8 +1512,10 @@ input:-internal-autofill-selected {
   border-radius: 5px;
   text-decoration: none;
   margin-top: 10px;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
-
 
 
 

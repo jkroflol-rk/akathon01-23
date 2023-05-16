@@ -103,7 +103,14 @@ if (isset($_GET['order_id'])) {
 								}
 								?>
 							</ul>
-							<a href="admin.php?order_id=<?= $row->id ?>" class="test_btn">Click to Delete</a>
+							<?php
+								if ($row->admin == false){
+									echo "<a href='admin.php?order_id=<?= $row->id ?>' class='test_btn' onclick='return confirm('Are you sure you want to delete?')'>Click to Delete</a>";
+								}else{
+									echo "<h5>Deleting admin account is prohibited</h5>";
+								}
+
+							?>
 
 						</div>
 
@@ -166,7 +173,7 @@ if (isset($_GET['order_id'])) {
 			</div>
 
 			<div class="add_device">
-				<h2>developers rating</h2>
+				<h2>Devices</h2>
 
 					<table>
 						<thead>
@@ -200,17 +207,17 @@ if (isset($_GET['order_id'])) {
 									</td>
 								</tr>
 							<?php endforeach; ?>
-							<form action="updatedevices.php" method="POST">
+							<form action="updatedevices.php" method="POST" class="add_device_form">
 								<tr>
 									<td>
 										<p>Add a device &#40;Dont leave any blank field&#41;</p>
 									</td>
-									<td><input type="text" name="name" required></td>
-									<td><input type="text" name="port" required></td>
-									<td><input type="text" name="bandwidth" required></td>
-									<td><input type="text" name="price" required></td>
-									<td><input type="text" name="size" required></td>
-									<td><input type="text" name="weight" required></td>
+									<td><input type="text" name="name" required class="add_device_form"></td>
+									<td><input type="text" name="port" required class="add_device_form"> </td>
+									<td><input type="text" name="bandwidth" required class="add_device_form"></td>
+									<td><input type="text" name="price" required class="add_device_form"></td>
+									<td><input type="text" name="size" required class="add_device_form"></td>
+									<td><input type="text" name="weight" required class="add_device_form"></td>
 									
 									<td>
 										<input type="submit" value="Submit" class="button_one">
