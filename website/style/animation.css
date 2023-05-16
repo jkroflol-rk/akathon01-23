@@ -1,15 +1,15 @@
 .hello_container{
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto;
     /* grid-column-gap: 80px; */
     /* flex-wrap: wrap; */
-    /* justify-content: center; */
+    justify-content: center;
     transition: .8s;
   }
   
   .hello{
-    width: 600px;
-    height:600px;
+    width: 360px;
+    height:370px;
     background-color: green;
     border: 3px solid wheat;
     border-radius: 20%;
