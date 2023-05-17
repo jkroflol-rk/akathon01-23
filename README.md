@@ -31,6 +31,6 @@ Contest: Swinburne Akathon Semester Jan 2023
 - Go to folder 'htdocs'
 - Unzip the code inside that folder
 - Open XAMPP Control Panel, Start Apache
-- Go to your browser, type "localhost/akathon01-23" (replace akathon01-23 by the folder contains the file)
+- Go to your browser, type "localhost/akathon01-23" (replace akathon01-23 by the folder contains the files if necessary)
 
 
