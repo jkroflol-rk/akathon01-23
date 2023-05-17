@@ -15,7 +15,7 @@ session_start();
     <link rel="stylesheet" href="style/form.css">
 
     <script src="js/form.js"></script>
-    <title>Information</title>
+    <title>Homepage</title>
 </head>
 
 <body>

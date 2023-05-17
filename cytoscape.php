@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="style/test.css">
 	<link rel="icon" href="images/tabicon.png">
     <script src="js/form.js"></script>
-    <title>Information</title>
+    <title>Device Config</title>
 </head>
 
 <body>

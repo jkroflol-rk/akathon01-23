@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="style/form.css">
     <script src="js/form.js"></script>
 	<link rel="icon" href="images/tabicon.png">
-    <title>Information</title>
+    <title>Make An Order</title>
 </head>
 <body>
     <div class="fixbug">

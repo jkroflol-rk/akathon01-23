@@ -32,7 +32,7 @@
 	<link rel="stylesheet" href="style/animation.css">
 	<link rel="stylesheet" href="style/form.css">
 	<link rel="icon" href="images/tabicon.png">
-	<title>Information</title>
+	<title>Admin</title>
 
 </head>
 

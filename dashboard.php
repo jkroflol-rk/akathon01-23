@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="style/animation.css">
 	    <link rel="icon" href="images/tabicon.png">
         <link rel="stylesheet" href="style/form.css">
-        <title>Information</title>
+        <title>Dashboard</title>
 
     </head>
     <body>
