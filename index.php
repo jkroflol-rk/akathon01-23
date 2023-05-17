@@ -9,11 +9,9 @@ session_start();
     <link rel="icon" href="images/tabicon.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="style/form.css">
 
     <script src="js/form.js"></script>
@@ -53,7 +51,6 @@ session_start();
 
         <main>
             <div class="introduction_page">
-                <!-- <img src="images/png-clipart-black-and-white-tp-link-wireless-router-illustration-wireless-router-wi-fi-computer-network-router-electronics-data-transfer-rate-removebg-preview.png" alt="Router" class="animate__animated animate__fadeInLeft"> -->
                 <a href="#service_introduction"><i class="fa-solid fa-chevron-down" id="down_icon"></i></a>
                 <div class="intro_text animate__animated animate__fadeInRight">
                     <h1>TNE:GO</h1>

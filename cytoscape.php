@@ -1,36 +1,35 @@
 <?php
-//if logged in, go to manager page
-session_start();
-if ((isset($_SESSION['authenticated']) && $_SESSION['authenticated']) || (isset($_SESSION['admin']) && $_SESSION['admin'])) {
-} else {
-    header('Location: ./login.php');
-}
-include('./conn/func.php');
-
-$data = getData("users");
-
-$temp_id = $_SESSION['userid'];
-$vlan = null;
-foreach ($data->data as $row) {
-    if ($row -> id === $temp_id) {
-        $vlan = $row -> vlans; // Assign the VLAN value
-        $read = json_encode($vlan);
-        break; // Exit the loop since the ID is found
+    //if logged in, go to manager page
+    session_start();
+    if ((isset($_SESSION['authenticated']) && $_SESSION['authenticated']) || (isset($_SESSION['admin']) && $_SESSION['admin'])) {
+    } else {
+        header('Location: ./login.php');
     }
-}
+    include('./conn/func.php');
 
-if (empty($vlan)) {
-    $err = "Please input the number of departments and hosts before viewing your config!";
-    $encodederr = urlencode($err);
-    header("Location: ./service.php?noti=$encodederr");
-    exit; // Add an exit statement after the header redirect
-}
+    $data = getData("users");
 
-$jsonData = printVlan($read);
+    $temp_id = $_SESSION['userid'];
+    $vlan = null;
+    foreach ($data->data as $row) {
+        if ($row -> id === $temp_id) {
+            $vlan = $row -> vlans; // Assign the VLAN value
+            $read = json_encode($vlan);
+            break; // Exit the loop since the ID is found
+        }
+    }
+
+    if (empty($vlan)) {
+        $err = "Please input the number of departments and hosts before viewing your config!";
+        $encodederr = urlencode($err);
+        header("Location: ./service.php?noti=$encodederr");
+        exit; // Add an exit statement after the header redirect
+    }
+
+    $jsonData = printVlan($read);
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -50,11 +49,7 @@ $jsonData = printVlan($read);
 
 <body>
     <div class="fixbug">
-
-
         <header>
-
-
             <nav>
                 <h1>TNE:GO</h1>
                 <div class="nav_links">
@@ -65,14 +60,14 @@ $jsonData = printVlan($read);
                         <li><a href="dashboard.php">Dashboard</a></li>
                         <li><a href="ourteam.php">Our Team</a></li>
                         <?php
-                        if (isset($_SESSION['admin']) && $_SESSION['admin']) {
-                            echo "<li><a href='admin.php'>Admin</a></li>";
-                        }
-                        if ((isset($_SESSION['authenticated']) && $_SESSION['authenticated']) || (isset($_SESSION['admin']) && $_SESSION['admin'])) {
-                            echo "<li><a href='logout.php'>Logout</a></li>";
-                        } else {
-                            echo "<li><a href='login.php'>Login</a></li>";
-                        }
+                            if (isset($_SESSION['admin']) && $_SESSION['admin']) {
+                                echo "<li><a href='admin.php'>Admin</a></li>";
+                            }
+                            if ((isset($_SESSION['authenticated']) && $_SESSION['authenticated']) || (isset($_SESSION['admin']) && $_SESSION['admin'])) {
+                                echo "<li><a href='logout.php'>Logout</a></li>";
+                            } else {
+                                echo "<li><a href='login.php'>Login</a></li>";
+                            }
                         ?>
                     </ul>
 
