@@ -34,7 +34,6 @@ if ((isset($_SESSION['authenticated']) && $_SESSION['authenticated']) || (isset(
                 <h1>TNE:GO</h1>
                 <div class="nav_links">
                     <input type="checkbox" id="button">
-                    <!-- <label for="button" id="nav_icon"><img src="images/nav.png" alt="navbar"></label> -->
                     <label for="button" id="nav_icon"><i class="fa-solid fa-bars"></i></label>
                     <ul>
                         <li><a href="index.php">Homepage</a></li>

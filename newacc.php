@@ -47,7 +47,6 @@
     }else{
         $errormsg = urlencode("Username has already been used");
         header("Location: ./registration.php?noti=$errormsg");
-
     }
 ?>
 

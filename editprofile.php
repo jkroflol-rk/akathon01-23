@@ -23,12 +23,6 @@
     curl_close($ch);
 
     $data = json_decode($response);
-
-    // foreach ($data->data as $row) {
-    //     if ($row->id == $_SESSION['userid']){
-    //         $_SESSION['row'] = $row;
-    //     }
-    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,26 +32,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 	    <link rel="icon" href="images/tabicon.png">
         <link rel="stylesheet" href="style/animation.css">
         <link rel="stylesheet" href="style/form.css">
         <link
         rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-        <!-- <script src="https://unpkg.com/cytoscape@3.24.0/dist/cytoscape.min.js"></script> -->
-        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dagre/0.8.5/dagre.min.js"></script> -->
-        <!-- <script src="https://cdn.jsdelivr.net/npm/cytoscape-dagre@2.5.0/cytoscape-dagre.min.js"></script> -->
-        <!-- <script src="js/djtmeakathon.js"></script> -->
         <title>Information</title>
 
     </head>
     <body>
     <div class="fixbug">
-        
-        
         <header>
-
-            
             <nav>
                 <h1>TNE:GO</h1>
                 <div class="nav_links">

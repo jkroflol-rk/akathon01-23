@@ -1,46 +1,37 @@
 <?php
-//if logged in, go to manager page
-session_start();
-if (isset($_SESSION['admin']) && $_SESSION['admin']) {
+	//if logged in, go to manager page
+	session_start();
+	if (isset($_SESSION['admin']) && $_SESSION['admin']) {
 
-} else {
-	header('Location: ./login.php');
-}
+	} else {
+		header('Location: ./login.php');
+	}
 
-include('./conn/func.php');
+	include('./conn/func.php');
 
-$data = getData("users");
+	$data = getData("users");
 
-$d_data = getData("devices");
+	$d_data = getData("devices");
 
-if (isset($_GET['order_id'])) {
-	$del_id = $_GET['order_id'];
-	$delete = deleteData("users", $del_id);
-	echo $delete;
-	header('Location: ./admin.php');
-}
+	if (isset($_GET['order_id'])) {
+		$del_id = $_GET['order_id'];
+		$delete = deleteData("users", $del_id);
+		echo $delete;
+		header('Location: ./admin.php');
+	}
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-	<!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
 	<link rel="stylesheet" href="style/animation.css">
 	<link rel="stylesheet" href="style/form.css">
 	<link rel="icon" href="images/tabicon.png">
-	<!-- <link
-	rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"> -->
-	<!-- <script src="https://unpkg.com/cytoscape@3.24.0/dist/cytoscape.min.js"></script> -->
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/dagre/0.8.5/dagre.min.js"></script> -->
-	<!-- <script src="https://cdn.jsdelivr.net/npm/cytoscape-dagre@2.5.0/cytoscape-dagre.min.js"></script> -->
-	<!-- <script src="js/djtmeakathon.js"></script> -->
-
 	<title>Information</title>
 
 </head>
@@ -121,7 +112,6 @@ if (isset($_GET['order_id'])) {
 
 			<div class="add_device">
 				<h2 id="scroll">Devices</h2>
-
 					<table>
 						<thead>
 							<tr>
@@ -133,7 +123,6 @@ if (isset($_GET['order_id'])) {
 								<th>Size</th>
 								<th>Weight</th>
 								<th>Control</th>
-								<!-- <th>Weight</th> -->
 							</tr>
 						</thead>
 
@@ -164,16 +153,12 @@ if (isset($_GET['order_id'])) {
 									<td><input type="text" name="bandwidth" required class="add_device_form"></td>
 									<td><input type="text" name="price" required class="add_device_form"></td>
 									<td><input type="text" name="size" required class="add_device_form"></td>
-									<td><input type="text" name="weight" required class="add_device_form"></td>
-									
+									<td><input type="text" name="weight" required class="add_device_form"></td>									
 									<td>
 										<input type="submit" value="Submit" class="button_one">
 									</td>
 								</tr>
 							</form>
-
-
-
 						</tbody>
 					</table>
 			</div>
