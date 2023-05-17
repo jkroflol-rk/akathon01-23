@@ -105,7 +105,7 @@ if (isset($_GET['order_id'])) {
 							</ul>
 							<?php
 								if ($row->admin == false){
-									echo "<a href='admin.php?order_id=<?= $row->id ?>' class='test_btn' onclick='return confirm('Are you sure you want to delete?')'>Click to Delete</a>";
+									echo "<a href='admin.php?order_id=" . $row->id . "' class='test_btn' onclick='return confirm('Are you sure you want to delete?')'>Click to Delete</a>";
 								}else{
 									echo "<h5>Deleting admin account is prohibited</h5>";
 								}
