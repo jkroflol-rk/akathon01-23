@@ -1,8 +1,13 @@
 .hello_container{
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 0.7fr));
+    justify-content: center;
+    grid-gap: 10px;
     transition: .8s;
+  
   }
   
   .hello{
