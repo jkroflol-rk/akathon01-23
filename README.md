@@ -13,8 +13,8 @@ Contest: Swinburne Akathon Semester Jan 2023
 - Mentor: Pham Van Dai
 
 ## Project Description
-
-<Description here>
+#Prototype: Simple Network Configurator 
+Base on Cisco Packet Tracer 
 
 ## Technologies Used
 - Cytoscape.js
